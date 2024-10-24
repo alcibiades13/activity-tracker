@@ -1,0 +1,124 @@
+@import "../variables.scss";
+
+.header {
+  // margin-left: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0 $padding-mid;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid $light-bg-700;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+
+    .menu-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+
+    .new-entry-btn {
+      background-color: $light-blue-100; /* Assuming this is your light blue variable */
+      color: $purple-400;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: $purple-400; /* A slightly darker blue for hover */
+        color: $white;
+      }
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background-color: $light-bg-400;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-right: 20px;
+
+      .search-icon {
+        color: $grey-400;
+        margin-right: 10px;
+      }
+
+      input {
+        border: none;
+        background: none;
+        outline: none;
+        font-size: 1rem;
+      }
+    }
+
+    .icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+
+    .notification {
+      color: $grey-400;
+    }
+
+    .notification-icon {
+      position: relative; /* Ensures that the badge is positioned relative to the icon */
+      display: inline-block;
+      cursor: pointer;
+
+      .bell-icon {
+        font-size: 22px; /* Adjust the size of the bell icon */
+        color: $grey-400; /* Custom color for the bell icon */
+      }
+
+      .notification-badge {
+        position: absolute;
+        top: -8px; /* Adjust to place the badge in the corner */
+        right: -8px; /* Adjust to place the badge in the corner */
+        background-color: red;
+        color: white;
+        padding: 1px 1px; /* Adjust padding for size */
+        border-radius: 50%; /* Makes it circular */
+        font-size: 10px; /* Adjust font size */
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 18px; /* Ensures the circle is round even with single digits */
+        min-height: 18px;
+      }
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      margin-left: $padding-mid;
+
+      .user-icon {
+        width: 45px;
+        height: 45px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      .user-name {
+        font-weight: bold;
+        color: #666;
+      }
+    }
+  }
+}

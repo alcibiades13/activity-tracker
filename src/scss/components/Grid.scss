@@ -1,0 +1,23 @@
+@import "../variables";
+
+// SCSS for Grid System
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+
+  & > .col {
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+  }
+
+  // Define the widths for 12-column system
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      flex: 0 0 calc(100% / 12 * #{$i}); // Use calc() for calculation
+      max-width: calc(100% / 12 * #{$i}); // Use calc() for calculation
+    }
+  }
+}

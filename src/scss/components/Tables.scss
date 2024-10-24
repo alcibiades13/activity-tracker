@@ -1,0 +1,44 @@
+@import "../variables";
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute; /* or 'relative' based on your layout */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* make sure it appears on top */
+
+    .dropdown-item {
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        padding-left: 20px;
+        background: none; /* or adjust based on your design */
+        position: relative;
+        text-decoration: none;
+        color: $black;
+        font-size: 15px;
+
+        .fa-icon {
+            margin-right: 10px;
+            display: inline-block;
+            // position: absolute;
+            // left: 8px;
+            // top: 8px;
+        }
+    }
+}
+
+
+
+.dropdown-item:hover {
+    background-color: #f0f0f0; /* change background on hover */
+}

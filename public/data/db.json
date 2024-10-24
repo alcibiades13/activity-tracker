@@ -1,0 +1,620 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "Project Alpha",
+      "status": "In Progress",
+      "startDate": "2024-01-15",
+      "endDate": "2024-06-30",
+      "tasks": [
+        {
+          "id": 101,
+          "description": "Complete initial setup",
+          "status": "Completed",
+          "assignedTo": "Alice",
+          "dueDate": "2024-01-30"
+        },
+        {
+          "id": 102,
+          "description": "Draft requirements",
+          "status": "In Progress",
+          "assignedTo": "Bob",
+          "dueDate": "2024-02-15"
+        },
+        {
+          "id": 103,
+          "description": "Set up development environment",
+          "status": "Completed",
+          "assignedTo": "Charlie",
+          "dueDate": "2024-02-20"
+        },
+        {
+          "id": 104,
+          "description": "Create UI mockups",
+          "status": "Pending",
+          "assignedTo": "Dana",
+          "dueDate": "2024-03-05"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Project Beta",
+      "status": "Planning",
+      "startDate": "2024-03-01",
+      "endDate": "2024-09-30",
+      "tasks": [
+        {
+          "id": 201,
+          "description": "Research competitors",
+          "status": "Pending",
+          "assignedTo": "Eve",
+          "dueDate": "2024-03-15"
+        },
+        {
+          "id": 202,
+          "description": "Create project plan",
+          "status": "Pending",
+          "assignedTo": "Frank",
+          "dueDate": "2024-04-01"
+        },
+        {
+          "id": 203,
+          "description": "Identify key stakeholders",
+          "status": "Pending",
+          "assignedTo": "Grace",
+          "dueDate": "2024-04-10"
+        },
+        {
+          "id": 204,
+          "description": "Gather requirements",
+          "status": "Pending",
+          "assignedTo": "Heidi",
+          "dueDate": "2024-04-20"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Project Gamma",
+      "status": "Completed",
+      "startDate": "2023-08-01",
+      "endDate": "2024-01-10",
+      "tasks": [
+        {
+          "id": 301,
+          "description": "Finalize project scope",
+          "status": "Completed",
+          "assignedTo": "Ivan",
+          "dueDate": "2023-08-15"
+        },
+        {
+          "id": 302,
+          "description": "Conduct stakeholder interviews",
+          "status": "Completed",
+          "assignedTo": "Judy",
+          "dueDate": "2023-09-01"
+        },
+        {
+          "id": 303,
+          "description": "Develop prototype",
+          "status": "Completed",
+          "assignedTo": "Kate",
+          "dueDate": "2023-10-10"
+        },
+        {
+          "id": 304,
+          "description": "User testing and feedback",
+          "status": "Completed",
+          "assignedTo": "Leo",
+          "dueDate": "2023-11-01"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Project Delta",
+      "status": "In Progress",
+      "startDate": "2024-02-01",
+      "endDate": "2024-08-31",
+      "tasks": [
+        {
+          "id": 401,
+          "description": "Kickoff meeting with stakeholders",
+          "status": "Completed",
+          "assignedTo": "Mallory",
+          "dueDate": "2024-02-05"
+        },
+        {
+          "id": 402,
+          "description": "Define user personas",
+          "status": "In Progress",
+          "assignedTo": "Nina",
+          "dueDate": "2024-02-15"
+        },
+        {
+          "id": 403,
+          "description": "Create wireframes",
+          "status": "Pending",
+          "assignedTo": "Oscar",
+          "dueDate": "2024-03-01"
+        }
+      ]
+    }
+  ],
+  "employees": [
+    {
+      "id": "E1",
+      "name": "Alice",
+      "role": "Project Manager",
+      "email": "alice@example.com",
+      "phone": "+1234567890",
+      "status": "active",
+      "salary": "120000,00"
+    },
+    {
+      "id": "E2",
+      "name": "Bob",
+      "role": "Developer",
+      "email": "bob@example.com",
+      "phone": "+0987654321",
+      "status": "active",
+      "salary": "125000,00"
+    },
+    {
+      "id": "E3",
+      "name": "Charlie",
+      "role": "Analyst",
+      "email": "charlie@example.com",
+      "phone": "+1122334455",
+      "status": "inactive",
+      "salary": "151000,00"
+    },
+    {
+      "id": "E4",
+      "name": "Dana",
+      "role": "Designer",
+      "email": "dana@example.com",
+      "phone": "+5566778899",
+      "status": "inactive",
+      "salary": "133000,00"
+    },
+    {
+      "id": "E5",
+      "name": "Eve",
+      "role": "Tester",
+      "email": "eve@example.com",
+      "phone": "+1239876540",
+      "status": "inactive",
+      "salary": "122000,00"
+    },
+    {
+      "id": "E6",
+      "name": "Frank",
+      "role": "System Architect",
+      "email": "frank@example.com",
+      "phone": "+1098765432",
+      "status": "active",
+      "salary": "112000,00"
+    },
+    {
+      "id": "E7",
+      "name": "Grace",
+      "role": "DevOps Engineer",
+      "email": "grace@example.com",
+      "phone": "+2233445566",
+      "status": "active",
+      "salary": "100000,00"
+    },
+    {
+      "id": "E8",
+      "name": "Henry",
+      "role": "Database Admin",
+      "email": "henry@example.com",
+      "phone": "+6677889900",
+      "status": "active",
+      "salary": "112000,00"
+    },
+    {
+      "id": "E9",
+      "name": "Isabel",
+      "role": "UX/UI Designer",
+      "email": "isabel@example.com",
+      "phone": "+5544332211",
+      "status": "active",
+      "salary": "87000,00"
+    },
+    {
+      "id": "E10",
+      "name": "Jack",
+      "role": "Product Owner",
+      "email": "jack@example.com",
+      "phone": "+2211334455",
+      "status": "inactive",
+      "salary": "144000,00"
+    },
+    {
+      "id": "E11",
+      "name": "Kelly",
+      "role": "Marketing Lead",
+      "email": "kelly@example.com",
+      "phone": "+9900112233",
+      "status": "active",
+      "salary": "138000,00"
+    },
+    {
+      "id": "E12",
+      "name": "Louis",
+      "role": "Backend Developer",
+      "email": "louis@example.com",
+      "phone": "+6655443322",
+      "status": "inactive",
+      "salary": "122000,00"
+    },
+    {
+      "id": "E13",
+      "name": "Mia",
+      "role": "Frontend Developer",
+      "email": "mia@example.com",
+      "phone": "+4433221100",
+      "status": "active",
+      "salary": "140000,00"
+    },
+    {
+      "id": "E14",
+      "name": "Nina",
+      "role": "Scrum Master",
+      "email": "nina@example.com",
+      "phone": "+3344556677",
+      "status": "active",
+      "salary": "96000,00"
+    },
+    {
+      "id": "E15",
+      "name": "Oscar",
+      "role": "QA Engineer",
+      "email": "oscar@example.com",
+      "phone": "+1122335566",
+      "status": "inactive",
+      "salary": "101000,00"
+    },
+    {
+      "id": "21",
+      "name": "Zeljko",
+      "role": "Developer",
+      "email": "zeljko@gmail.com",
+      "phone": "+12345678",
+      "status": "active",
+      "salary": "124000,00"
+    },
+    {
+      "id": "be71",
+      "name": "Dejan",
+      "role": "Direktor",
+      "email": "dejan@gmail.com",
+      "phone": "+381123456",
+      "status": "inactive",
+      "salary": "143000,00"
+    },
+    {
+      "id": "27d0",
+      "name": "Igor",
+      "role": "asistent",
+      "email": "igor@gmail.com",
+      "phone": "+384123458",
+      "status": "active",
+      "salary": "122000,00"
+    },
+    {
+      "id": "6804",
+      "name": "Branislav",
+      "role": "Developer",
+      "email": "branislav@gmail.com",
+      "phone": "+384567987",
+      "status": "active",
+      "salary": "100000,00"
+    },
+    {
+      "id": "23a9",
+      "name": "Bojan",
+      "role": "Menadzer",
+      "email": "bojan@yahoo.com",
+      "phone": "+3811321456",
+      "status": "active",
+      "salary": "122000,00"
+    },
+    {
+      "id": "700f",
+      "name": "Ivana",
+      "role": "Knjigovodja",
+      "email": "ivana@gmail.com",
+      "phone": "+381 64 123987",
+      "status": "active",
+      "salary": "102000,00"
+    }
+  ],
+  "activities": [
+    {
+      "id": "1",
+      "projectId": 1,
+      "activityType": "Meeting",
+      "description": "Kickoff meeting with stakeholders",
+      "date": "2024-01-10",
+      "durationHours": 2
+    },
+    {
+      "id": "2",
+      "projectId": 1,
+      "activityType": "Development",
+      "description": "Initial development phase",
+      "date": "2024-01-15",
+      "durationHours": 40
+    },
+    {
+      "id": "3",
+      "projectId": 1,
+      "activityType": "Testing",
+      "description": "Functional testing phase",
+      "date": "2024-01-25",
+      "durationHours": 30
+    },
+    {
+      "id": "4",
+      "projectId": 1,
+      "activityType": "Review",
+      "description": "Code review and optimization",
+      "date": "2024-02-01",
+      "durationHours": 15
+    },
+    {
+      "id": "5",
+      "projectId": 2,
+      "activityType": "Research",
+      "description": "Market research for new features",
+      "date": "2024-03-05",
+      "durationHours": 30
+    },
+    {
+      "id": "6",
+      "projectId": 2,
+      "activityType": "Design",
+      "description": "Design mockups for new features",
+      "date": "2024-03-10",
+      "durationHours": 20
+    },
+    {
+      "id": "7",
+      "projectId": 2,
+      "activityType": "Development",
+      "description": "Backend development",
+      "date": "2024-03-20",
+      "durationHours": 50
+    },
+    {
+      "id": "8",
+      "projectId": 2,
+      "activityType": "Development",
+      "description": "Frontend development",
+      "date": "2024-03-30",
+      "durationHours": 40
+    },
+    {
+      "id": "9",
+      "projectId": 1,
+      "activityType": "Documentation",
+      "description": "Create technical documentation",
+      "date": "2024-02-10",
+      "durationHours": 10
+    },
+    {
+      "id": "10",
+      "projectId": 2,
+      "activityType": "Testing",
+      "description": "Unit testing of new features",
+      "date": "2024-04-01",
+      "durationHours": 25
+    },
+    {
+      "id": "11",
+      "projectId": 1,
+      "activityType": "Deployment",
+      "description": "Deploy initial version to staging",
+      "date": "2024-02-15",
+      "durationHours": 8
+    },
+    {
+      "id": "12",
+      "projectId": 1,
+      "activityType": "Meeting",
+      "description": "Sprint planning meeting",
+      "date": "2024-02-20",
+      "durationHours": 1
+    },
+    {
+      "id": "13",
+      "projectId": 2,
+      "activityType": "Planning",
+      "description": "Define sprint backlog",
+      "date": "2024-03-25",
+      "durationHours": 3
+    },
+    {
+      "id": "14",
+      "projectId": 1,
+      "activityType": "Development",
+      "description": "Fix reported bugs",
+      "date": "2024-03-01",
+      "durationHours": 35
+    },
+    {
+      "id": "15",
+      "projectId": 2,
+      "activityType": "Review",
+      "description": "Review and approval of mockups",
+      "date": "2024-04-05",
+      "durationHours": 6
+    },
+    {
+      "id": "16",
+      "projectId": 1,
+      "activityType": "Testing",
+      "description": "End-to-end testing",
+      "date": "2024-03-15",
+      "durationHours": 20
+    },
+    {
+      "id": "17",
+      "projectId": 2,
+      "activityType": "Deployment",
+      "description": "Deploy new feature to production",
+      "date": "2024-04-10",
+      "durationHours": 10
+    },
+    {
+      "id": "18",
+      "projectId": 2,
+      "activityType": "Review",
+      "description": "Sprint retrospective",
+      "date": "2024-04-15",
+      "durationHours": 4
+    },
+    {
+      "id": "19",
+      "projectId": 1,
+      "activityType": "Training",
+      "description": "Train staff on new system",
+      "date": "2024-04-20",
+      "durationHours": 12
+    },
+    {
+      "id": "20",
+      "projectId": 2,
+      "activityType": "Meeting",
+      "description": "Stakeholder meeting for project status",
+      "date": "2024-04-25",
+      "durationHours": 2
+    }
+  ],
+  "financials": [
+    {
+      "month": "2023-09",
+      "revenue": 15000,
+      "expenses": 7000,
+      "biggestExpense": {
+        "category": "Salaries",
+        "amount": 4000
+      },
+      "id": "a34a"
+    },
+    {
+      "month": "2023-08",
+      "revenue": 12000,
+      "expenses": 8000,
+      "biggestExpense": {
+        "category": "Rent",
+        "amount": 3000
+      },
+      "id": "fd52"
+    },
+    {
+      "month": "2023-07",
+      "revenue": 18000,
+      "expenses": 9000,
+      "biggestExpense": {
+        "category": "Marketing",
+        "amount": 5000
+      },
+      "id": "6702"
+    },
+    {
+      "month": "2023-06",
+      "revenue": 20000,
+      "expenses": 6000,
+      "biggestExpense": {
+        "category": "Utilities",
+        "amount": 2000
+      },
+      "id": "1c62"
+    },
+    {
+      "month": "2023-05",
+      "revenue": 22000,
+      "expenses": 10000,
+      "biggestExpense": {
+        "category": "Supplies",
+        "amount": 3500
+      },
+      "id": "1c4f"
+    },
+    {
+      "month": "2023-04",
+      "revenue": 17000,
+      "expenses": 12000,
+      "biggestExpense": {
+        "category": "Salaries",
+        "amount": 7000
+      },
+      "id": "f645"
+    },
+    {
+      "month": "2023-03",
+      "revenue": 16000,
+      "expenses": 11000,
+      "biggestExpense": {
+        "category": "Rent",
+        "amount": 4000
+      },
+      "id": "cdfe"
+    },
+    {
+      "month": "2023-02",
+      "revenue": 19000,
+      "expenses": 8000,
+      "biggestExpense": {
+        "category": "Marketing",
+        "amount": 4500
+      },
+      "id": "432b"
+    },
+    {
+      "month": "2023-01",
+      "revenue": 21000,
+      "expenses": 9500,
+      "biggestExpense": {
+        "category": "Utilities",
+        "amount": 3000
+      },
+      "id": "2f9e"
+    },
+    {
+      "month": "2022-12",
+      "revenue": 25000,
+      "expenses": 12000,
+      "biggestExpense": {
+        "category": "Salaries",
+        "amount": 8000
+      },
+      "id": "1c60"
+    },
+    {
+      "month": "2022-11",
+      "revenue": 23000,
+      "expenses": 10500,
+      "biggestExpense": {
+        "category": "Supplies",
+        "amount": 4000
+      },
+      "id": "60ab"
+    },
+    {
+      "month": "2022-10",
+      "revenue": 24000,
+      "expenses": 11000,
+      "biggestExpense": {
+        "category": "Marketing",
+        "amount": 6000
+      },
+      "id": "f0d1"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.grid > .col {
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+.grid .col-1 {
+  flex: 0 0 calc(8.3333333333% * 1);
+  max-width: calc(8.3333333333% * 1);
+}
+.grid .col-2 {
+  flex: 0 0 calc(8.3333333333% * 2);
+  max-width: calc(8.3333333333% * 2);
+}
+.grid .col-3 {
+  flex: 0 0 calc(8.3333333333% * 3);
+  max-width: calc(8.3333333333% * 3);
+}
+.grid .col-4 {
+  flex: 0 0 calc(8.3333333333% * 4);
+  max-width: calc(8.3333333333% * 4);
+}
+.grid .col-5 {
+  flex: 0 0 calc(8.3333333333% * 5);
+  max-width: calc(8.3333333333% * 5);
+}
+.grid .col-6 {
+  flex: 0 0 calc(8.3333333333% * 6);
+  max-width: calc(8.3333333333% * 6);
+}
+.grid .col-7 {
+  flex: 0 0 calc(8.3333333333% * 7);
+  max-width: calc(8.3333333333% * 7);
+}
+.grid .col-8 {
+  flex: 0 0 calc(8.3333333333% * 8);
+  max-width: calc(8.3333333333% * 8);
+}
+.grid .col-9 {
+  flex: 0 0 calc(8.3333333333% * 9);
+  max-width: calc(8.3333333333% * 9);
+}
+.grid .col-10 {
+  flex: 0 0 calc(8.3333333333% * 10);
+  max-width: calc(8.3333333333% * 10);
+}
+.grid .col-11 {
+  flex: 0 0 calc(8.3333333333% * 11);
+  max-width: calc(8.3333333333% * 11);
+}
+.grid .col-12 {
+  flex: 0 0 calc(8.3333333333% * 12);
+  max-width: calc(8.3333333333% * 12);
+}/*# sourceMappingURL=Grid.css.map */

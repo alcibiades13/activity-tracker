@@ -1,0 +1,105 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0 2rem;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid #dee5f1;
+}
+.header .header-left {
+  display: flex;
+  align-items: center;
+}
+.header .header-left .menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.header .header-left .new-entry-btn {
+  background-color: #f8fbff; /* Assuming this is your light blue variable */
+  color: #484fad;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.header .header-left .new-entry-btn:hover {
+  background-color: #484fad; /* A slightly darker blue for hover */
+  color: #ffffff;
+}
+.header .header-right {
+  display: flex;
+  align-items: center;
+}
+.header .header-right .search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f6f7fb;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 20px;
+}
+.header .header-right .search-box .search-icon {
+  color: #7f8da4;
+  margin-right: 10px;
+}
+.header .header-right .search-box input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 1rem;
+}
+.header .header-right .icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.header .header-right .notification {
+  color: #7f8da4;
+}
+.header .header-right .notification-icon {
+  position: relative; /* Ensures that the badge is positioned relative to the icon */
+  display: inline-block;
+  cursor: pointer;
+}
+.header .header-right .notification-icon .bell-icon {
+  font-size: 22px; /* Adjust the size of the bell icon */
+  color: #7f8da4; /* Custom color for the bell icon */
+}
+.header .header-right .notification-icon .notification-badge {
+  position: absolute;
+  top: -8px; /* Adjust to place the badge in the corner */
+  right: -8px; /* Adjust to place the badge in the corner */
+  background-color: red;
+  color: white;
+  padding: 1px 1px; /* Adjust padding for size */
+  border-radius: 50%; /* Makes it circular */
+  font-size: 10px; /* Adjust font size */
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 18px; /* Ensures the circle is round even with single digits */
+  min-height: 18px;
+}
+.header .header-right .user-profile {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+.header .header-right .user-profile .user-icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.header .header-right .user-profile .user-name {
+  font-weight: bold;
+  color: #666;
+}/*# sourceMappingURL=Header.css.map */
