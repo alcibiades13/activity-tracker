@@ -3,7 +3,8 @@ import axios from "axios";
 import EmployeeRow from "../components/EmployeeRow";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faSliders } from '@fortawesome/free-solid-svg-icons';
+import CustomizeColumnsModal from "../components/CustomizeColumnsModal";
 
 
 const Employees = () => {
@@ -11,7 +12,19 @@ const Employees = () => {
   const [selectedEmployees, setSelectedEmployees] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchField, setSearchField] = useState("name"); // Default to name (search filter)
-
+  // State to manage which columns are visible
+  const [visibleColumns, setVisibleColumns] = useState([
+    'id', // Default columns
+    'name',
+    'role',
+    'email',
+    'phone',
+    'status',
+    'salary'
+  ]);
+  const allColumns = ['id','name', 'role', 'email', 'phone', 'status', 'salary']; // Define all available columns
+  const columnOrder = ['id', 'name', 'role', 'email', 'phone', 'status', 'salary'];
+  const [modalOpen, setModalOpen] = useState(false); // State to manage modal visibility
 
   useEffect(() => {
     axios
@@ -97,8 +110,35 @@ const Employees = () => {
     setSearchQuery(e.target.value);
   };
 
+  // customize table modal toggle
+  const handleToggleModal = () => {
+    setModalOpen((prev) => !prev); // Toggle modal state
+  };
+
+  // to add classes to specific columns
+  const getColumnClass = (column) => {
+    switch (column) {
+      case 'status':
+        return 'td-center';
+      case 'salary':
+        return 'td-right';
+      default:
+        return ''; // No special class for other columns
+    }
+  };
+
   return (
     <div className="page-wrapper">
+
+      {modalOpen && (
+        <CustomizeColumnsModal
+          allColumns={allColumns}
+          visibleColumns={visibleColumns}
+          setVisibleColumns={setVisibleColumns}
+          onClose={handleToggleModal}
+        />
+      )}
+
       <div className="table-actions">
         <div className="actions-left">
 
@@ -157,6 +197,7 @@ const Employees = () => {
           <Link to="/add-employee">
             <button className="btn btn-add">+ Add New Employee</button>
           </Link>
+          <button onClick={handleToggleModal} className="btn btn-customize"><FontAwesomeIcon icon={faSliders} /></button>
         </div>
       </div>
 
@@ -170,12 +211,13 @@ const Employees = () => {
                 onChange={handleSelectAll}
               />
             </th>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Role</th>
-            <th className="td-right">Salary</th>
-            <th className="td-center">Status</th>
-            <th>Phone</th>
+            {columnOrder
+              .filter((column) => visibleColumns.includes(column))
+              .map((column) => (
+                <th key={column} className={getColumnClass(column)}>
+                  {column.charAt(0).toUpperCase() + column.slice(1)}
+                </th>
+              ))}
             <th className="td-center">Actions</th>
           </tr>
         </thead>
@@ -188,6 +230,8 @@ const Employees = () => {
               onCheckboxChange={() => handleCheckboxChange(employee.id)}
               // onDelete={() => handleDeleteEmployee}
               onDelete={handleDeleteEmployee}
+              visibleColumns={visibleColumns} 
+              columnOrder={columnOrder} 
             />
           ))}
         </tbody>

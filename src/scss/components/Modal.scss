@@ -1,0 +1,54 @@
+@import '../variables';
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  z-index: 1000; /* Ensure it appears above other content */
+
+
+  .modal-header {
+    border-bottom: 1px solid $purple-400;
+    padding: $padding-small $padding-mid;
+  }
+
+  .btn {
+    margin: $padding-mid;
+    margin-top: 0;
+  }
+
+  h2 {
+    margin-bottom: 0;
+    color: $grey-400;    
+    font-weight: 500;
+  }
+}
+
+.modal-columns {
+  padding: $padding-mid;
+}
+
+.modal-item label {
+  display: flex;
+  gap: 10px;
+
+  input {
+    height: 16px;
+    width: 16px;
+    transform: translateY(4px);
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: $purple-400;
+  }
+}
+
+.modal div {
+  margin-bottom: 10px;
+}
