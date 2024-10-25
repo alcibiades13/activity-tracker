@@ -74,12 +74,16 @@ const AddEmployeeForm = () => {
 
       <div className="form-group">
         <label htmlFor="status">Employee Status</label>
-        <input
+        <select
           id="status"
           name="status"
-          placeholder="Enter Employee Status"
+          value={formData.status}
           onChange={handleChange}
-        />
+        >
+          <option value="">Select Status</option> {/* Optional placeholder */}
+          <option value="active">active</option>
+          <option value="inactive">inactive</option>
+        </select>
       </div>
 
       <div className="form-group">

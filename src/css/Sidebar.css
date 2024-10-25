@@ -74,7 +74,7 @@
   flex-direction: column;
 }
 
-.dropdown-btn {
+.sidebar .dropdown-btn {
   display: flex;
   align-items: center;
   width: 100%;
@@ -87,15 +87,15 @@
   cursor: pointer;
   transition: padding-left 0.3s ease-in-out;
 }
-.dropdown-btn span {
+.sidebar .dropdown-btn span {
   flex-grow: 1;
   font-weight: 500;
 }
-.dropdown-btn:hover {
+.sidebar .dropdown-btn:hover {
   background-color: #d4d6ed;
   color: #484fad;
 }
-.dropdown-btn.rotate .nav-icon:last-child {
+.sidebar .dropdown-btn.rotate .nav-icon:last-child {
   transform: rotate(180deg);
 }
 

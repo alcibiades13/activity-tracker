@@ -38,7 +38,7 @@ const EmployeeRow = ({ employee, isChecked, onCheckboxChange, onDelete }) => {
         )}
       </td>
       <td>{employee.phone}</td>
-      <td data-label="Operations" className="centered-text">
+      <td data-label="Operations" className="td-center">
         {/* Pass the dropdown state and toggle function */}
         <DropdownMenu
             employeeId={employee.id}

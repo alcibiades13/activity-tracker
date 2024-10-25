@@ -17,19 +17,22 @@ const Projects = () => {
 
   return (
     <div className="page-wrapper">
-      <div className="table projects">
-        <div className="project table-head">
-          <span className="flex-1 th-item">Status</span>
-          <span className="flex-1 th-item">Projekat</span>
-          <span className="flex-1 th-item">Datum pocetka (h)</span>
-          <span className="flex-1 th-item">Zadaci</span>
-        </div>
+      <table className="table projects">
+        <thead className="project">
+          <tr>
+            <th>Status</th>
+            <th>Projekat</th>
+            <th>Datum pocetka (h)</th>
+            <th>Zadaci</th>
+          </tr>
+        </thead>
+        <tbody>
         {projects.map((project) => (
-          <div key={project.id} className="table-row">
-            <span className="flex-1">{project.status}</span>
-            <span className="flex-1">{project.name}</span>
-            <span className="flex-1">{project.startDate}</span>
-            <span className="flex-1">
+          <tr key={project.id}>
+            <td>{project.status}</td>
+            <td>{project.name}</td>
+            <td>{project.startDate}</td>
+            <td>
               {project.tasks.map((task) => (
                 <div key={task.id}>
                   <span>{task.description}</span>
@@ -42,10 +45,11 @@ const Projects = () => {
                   </span>
                 </div> // Use a div or another element for each task
               ))}
-            </span>
-          </div>
+            </td>
+          </tr>
         ))}
-      </div>
+        </tbody>
+      </table>
     </div>
   );
 };

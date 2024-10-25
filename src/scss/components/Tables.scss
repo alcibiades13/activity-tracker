@@ -1,13 +1,145 @@
 @import "../variables";
 
-.dropdown-btn {
+
+.btn-delete-selected {
+  border: 1px solid $grey-400;
+  outline: none;
+  color: $purple-900;
+  background-color: $light-bg-700;
+  cursor: pointer;
+}
+
+.btn-delete-selected:hover {
+    background-color: $purple-100;
+}
+
+.table {
+  border: 1px solid $light-bg-700;
+  width: 100%;
+  border-collapse: collapse;
+  tr,
+  thead {
+    margin-bottom: $padding-small;
+    margin-bottom: 0;
+    border-bottom: 2px solid $light-bg-700;
+    color: $purple-900;
+    font-size: 15px;
+    width: 100%;
+
+    td, th {
+      margin-right: $padding-small;
+      text-align: left;
+      padding: 12px 10px;
+    }
+    tr {
+      background-color: $white;
+    }
+    th {
+      border-bottom: 1px solid $light-bg-700;
+    }
+
+    &.activities span {
+      &:nth-of-type(2) {
+        flex-grow: 3;
+      }
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  &.projects span {
+    &:nth-of-type(2) {
+      flex-grow: 1;
+    }
+    &:nth-of-type(4) {
+      flex-grow: 2;
+    }
+  }
+
+  thead {
+    tr {
+      background: $purple-50;
+    }
+    th {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+      color: $grey-400;
+    }
+
+    span {
+      color: $purple-400;
+    }
+  }
+
+  tbody tr {
+    background-color: $white;
+  }
+
+  .status-icon {
+    font-size: 14px;
+
+    &.active-icon {
+      color: $muted-green;
+    }
+
+    &.inactive-icon {
+      color: $grey-400;
+    }
+  }
+
+  .td-center {
+    text-align: center;
+  }
+  .td-right {
+    text-align: right;
+    padding-right: $padding-mid;
+
+    .fa-sort {
+      margin-left: 5px;
+    }
+  }
+  .td-bold {
+    font-weight: bold;
+  }
+  .td-num {
+    font-family: $font-num;
+    // font-weight: 500;
+  }
+  .selected-row {
+    background-color: $light-bg-400;
+  }
+  .btn-delete {
+    border: none;
+    color: $grey-400;
+    cursor: pointer;
+  }
+  input[type="checkbox" i] {
+    width: 16px;/* Adjust to your desired size */
+    height: 16px;
+    transform: translateY(2px);
+  }
+
+  
+ .dropdown-btn {
     background: none;
     border: none;
     cursor: pointer;
+    justify-content: center;
+    font-size: 20px;
+    color: $purple-900;
+ }
+}
+
+.dropdown-container {
+    position: relative;
 }
 
 .dropdown-menu {
     position: absolute; /* or 'relative' based on your layout */
+    right: 30px;
     background-color: white;
     border: 1px solid #ccc;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -37,8 +169,64 @@
     }
 }
 
+.task-status {
+  &.completed {
+    color: green; // or any color representing "completed"
+  }
 
+  &.in-progress {
+    color: orange; // or any color representing "in progress"
+  }
+
+  &.pending {
+    color: red; // or any color representing "pending"
+  }
+}
 
 .dropdown-item:hover {
     background-color: #f0f0f0; /* change background on hover */
+}
+
+// Table actions
+.table-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.actions-left {
+  flex: 1;
+}
+
+.actions-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-container {
+    display: flex;
+    gap: 5px;
+
+    .search-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: $purple-400;
+    }
+}
+
+.search-input-wrapper {
+    position: relative;
+}
+.search-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 200px;
+  border: 1px solid $grey-400;
+  outline: none;
+padding-right: 30px;
 }

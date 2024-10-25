@@ -4,7 +4,6 @@
   border: none;
   padding: 10px 15px;
   border-radius: 4px;
-  margin-top: 2rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -37,12 +36,12 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
-.form .form-group input {
-  padding: 0.75rem;
+.form .form-group input, .form .form-group select {
+  padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  background-color: #f8fbff;
+  background-color: #f4f4fa;
 }
 .form .form-group input::placeholder {
   color: #999;
@@ -59,4 +58,12 @@
 }
 .form .submit-btn:hover {
   background-color: #393f89;
+}
+
+.filter-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f4f4fa;
 }/*# sourceMappingURL=Forms.css.map */

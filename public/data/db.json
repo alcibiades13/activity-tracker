@@ -331,6 +331,15 @@
       "phone": "+381 64 123987",
       "status": "active",
       "salary": "102000,00"
+    },
+    {
+      "id": "b145",
+      "name": "Test Emp2",
+      "role": "tester",
+      "email": "test@test.com",
+      "phone": "06546049",
+      "status": "active",
+      "salary": "140000,00"
     }
   ],
   "activities": [

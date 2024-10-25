@@ -137,12 +137,14 @@ const Homepage = () => {
       <h2>Graficki prikazi</h2>
       <div className="stats-row">
         <table className="table">
+          <tbody>
           {data.financials.map((financial) => (
             <tr key={financial.id}>
               <td>{financial.month}</td>
               <td>{financial.revenue}</td>
             </tr>
           ))}
+          </tbody>
         </table>
         <div className="table">
           <SimpleBarChart data={financialData} />

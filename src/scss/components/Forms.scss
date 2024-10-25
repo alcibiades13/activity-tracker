@@ -6,7 +6,6 @@
   border: none;
   padding: 10px 15px;
   border-radius: 4px;
-  margin-top: $padding-mid;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
@@ -42,12 +41,12 @@
       margin-bottom: 0.5rem;
     }
 
-    input {
-      padding: 0.75rem;
+    input, select {
+      padding: 0.5rem 0.75rem;
       border: 1px solid #ccc;
       border-radius: 4px;
       font-size: 1rem;
-      background-color: $light-blue-100;
+      background-color: $purple-20;
     }
 
     input::placeholder {
@@ -69,4 +68,12 @@
       background-color: darken($purple-400, 10%);
     }
   }
+}
+
+.filter-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: $purple-20;  
 }
