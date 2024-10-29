@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'; // Import PropTypes
 
 
-const CustomizeColumnsModal = ({ allColumns, visibleColumns, setVisibleColumns, onClose }) => {
+const CustomizeColumnsModal = ({ allColumns, visibleColumns, setVisibleColumns, onClose, onSave }) => {
   const handleColumnToggle = (column) => {
     setVisibleColumns((prev) =>
       prev.includes(column)
@@ -10,6 +10,10 @@ const CustomizeColumnsModal = ({ allColumns, visibleColumns, setVisibleColumns, 
     );
   };
 
+  const handleCancel = () => {
+    onClose(); // Call onClose to toggle modal visibility
+  };
+  
   return (
     <div className="modal">
       <div className="modal-header">
@@ -29,7 +33,10 @@ const CustomizeColumnsModal = ({ allColumns, visibleColumns, setVisibleColumns, 
           </div>
         ))}
       </div>
-      <button onClick={onClose} className="btn">Save and Close</button>
+      <div className="modal-footer">
+        <button onClick={handleCancel} className="btn btn-transparent">Cancel</button>
+        <button onClick={onSave} className="btn">Save and Close</button>
+      </div>
     </div>
   );
 };
@@ -40,6 +47,7 @@ CustomizeColumnsModal.propTypes = {
   visibleColumns: PropTypes.arrayOf(PropTypes.string).isRequired,
   setVisibleColumns: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
+  onSave: PropTypes.func.isRequired,
 };
 
 export default CustomizeColumnsModal;

@@ -24,6 +24,7 @@ const Employees = () => {
   ]);
   const allColumns = ['id','name', 'role', 'email', 'phone', 'status', 'salary']; // Define all available columns
   const columnOrder = ['id', 'name', 'role', 'email', 'phone', 'status', 'salary'];
+  const [initialVisibleColumns, setInitialVisibleColumns] = useState(visibleColumns); // save for when cancel is clicked
   const [modalOpen, setModalOpen] = useState(false); // State to manage modal visibility
 
   useEffect(() => {
@@ -112,7 +113,19 @@ const Employees = () => {
 
   // customize table modal toggle
   const handleToggleModal = () => {
+    setInitialVisibleColumns(visibleColumns);
     setModalOpen((prev) => !prev); // Toggle modal state
+  };
+
+  // Save changes and close modal
+  const handleSaveChanges = () => {
+    setModalOpen(false); // Close the modal after saving changes
+  };
+
+  // Cancel changes and revert to initial state
+  const handleCancelChanges = () => {
+    setVisibleColumns(initialVisibleColumns); // Revert to original columns
+    setModalOpen(false); // Close the modal
   };
 
   // to add classes to specific columns
@@ -135,7 +148,8 @@ const Employees = () => {
           allColumns={allColumns}
           visibleColumns={visibleColumns}
           setVisibleColumns={setVisibleColumns}
-          onClose={handleToggleModal}
+          onClose={handleCancelChanges}
+          onSave={handleSaveChanges}
         />
       )}
 

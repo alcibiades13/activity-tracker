@@ -201,7 +201,7 @@
 
 .actions-right {
   display: flex;
-  gap: 1rem;
+  gap: $padding-x;
   align-items: center;
 }
 
@@ -224,13 +224,23 @@
 }
 .search-input {
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: $fs-m;
   width: 200px;
   border: 1px solid $grey-400;
   outline: none;
-padding-right: 30px;
+  padding-right: 30px;
 }
 
 .btn-customize {
-  background-color: $grey-400;
+  background-color: $white;
+  border: 1px solid $purple-400;
+  color: $purple-400;
+
+  svg {
+    transform: scale(1.2);
+  }
+
+  &:hover {
+    background-color: $light-bg-100;
+  }
 }

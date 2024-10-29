@@ -177,7 +177,7 @@
       "email": "dana@example.com",
       "phone": "+5566778899",
       "status": "inactive",
-      "salary": "133000,00"
+      "salary": "136000,00"
     },
     {
       "id": "E5",
@@ -223,15 +223,6 @@
       "phone": "+5544332211",
       "status": "active",
       "salary": "87000,00"
-    },
-    {
-      "id": "E10",
-      "name": "Jack",
-      "role": "Product Owner",
-      "email": "jack@example.com",
-      "phone": "+2211334455",
-      "status": "inactive",
-      "salary": "144000,00"
     },
     {
       "id": "E11",

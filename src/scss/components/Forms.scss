@@ -4,13 +4,28 @@
   background-color: $purple-400;
   color: $white;
   border: none;
-  padding: 10px 15px;
+  height: 35px;
+  padding: 0 1rem;
+  font-size: $fs-m;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
   &:hover {
     background-color: darken($purple-400, 10%);
+  }
+}
+
+.btn-transparent {
+  background-color: transparent;
+  border: 1px solid $purple-400;
+  color: $purple-400;
+
+  &:hover {
+    background-color: $light-bg-400;
   }
 }
 
@@ -74,6 +89,6 @@
   padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 14px;
   background-color: $purple-20;  
 }

@@ -6,28 +6,41 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 0;
+  min-width: 400px;
   border-radius: 10px;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   z-index: 1000; /* Ensure it appears above other content */
 }
 .modal .modal-header {
-  border-bottom: 1px solid #484fad;
+  border-bottom: 1px solid #7f8da4;
   padding: 1rem 2rem;
 }
-.modal .btn {
-  margin: 2rem;
-  margin-top: 0;
+.modal .modal-footer {
+  padding: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+.modal .modal-footer .btn {
+  margin-right: 0;
 }
 .modal h2 {
   margin-bottom: 0;
   color: #7f8da4;
   font-weight: 500;
+  font-size: 1.25rem;
 }
 
 .modal-columns {
   padding: 2rem;
+  padding-bottom: 0;
 }
 
+.modal-item {
+  border: 1px solid #dee5f1;
+  padding: 0.5rem;
+  background-color: #f6f7fb;
+}
 .modal-item label {
   display: flex;
   gap: 10px;
@@ -38,7 +51,10 @@
   transform: translateY(4px);
 }
 .modal-item label input[type=checkbox]:checked {
-  background-color: #484fad;
+  accent-color: #484fad;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
 }
 
 .modal div {

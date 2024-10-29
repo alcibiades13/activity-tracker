@@ -2,13 +2,27 @@
   background-color: #484fad;
   color: #ffffff;
   border: none;
-  padding: 10px 15px;
+  height: 35px;
+  padding: 0 1rem;
+  font-size: 0.9375rem;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 .btn:hover {
   background-color: #393f89;
+}
+
+.btn-transparent {
+  background-color: transparent;
+  border: 1px solid #484fad;
+  color: #484fad;
+}
+.btn-transparent:hover {
+  background-color: #f6f7fb;
 }
 
 .form-wrapper {
@@ -64,6 +78,6 @@
   padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 14px;
   background-color: #f4f4fa;
 }/*# sourceMappingURL=Forms.css.map */
