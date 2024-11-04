@@ -13,12 +13,9 @@ const DataTable = ({ tableName }) => {
   const [tableData, setTableData] = useState([]);
   const [selectedTableRows, setSelectedTableRows] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  // const [searchField, setSearchField] = useState("name"); // Default to name (search filter)
-  const [searchField, setSearchField] = useState(
-    Object.keys(tableData[0] || {}).find(field => 
-      typeof tableData[0][field] === "string" || typeof tableData[0][field] === "number"
-    ) || ""
-  );
+    // const [searchField, setSearchField] = useState("name"); // Default to name (search filter)
+  const validFields = Object.keys(tableData[0] || {}).filter((field) => field !== "id");
+  const [searchField, setSearchField] = useState(validFields[0] || ""); // Set to the first valid field
 
   // const [searchField, setSearchField] = useState(Object.keys(tableData[0] || {})[0] || ""); // Default to first field
   const [visibleColumns, setVisibleColumns] = useState([]);
@@ -67,9 +64,17 @@ const DataTable = ({ tableName }) => {
 
   useEffect(() => {
     if (tableData.length > 0 && !searchField) {
-      setSearchField(Object.keys(tableData[0])[0]); // Set to the first field in the data structure
+      // Find the first field that is not "id" and is of a searchable type (string or number)
+      const searchableFields = Object.keys(tableData[0]).filter(
+        (field) => field !== "id" && (typeof tableData[0][field] === "string" || typeof tableData[0][field] === "number")
+      );
+      if (searchableFields.length > 0) {
+        setSearchField(searchableFields[0]); // Set to the first searchable field
+      }
     }
-  }, [tableData]);
+  }, [tableData, searchField]);
+
+
 
 
   // searching only by name
@@ -227,12 +232,15 @@ const DataTable = ({ tableName }) => {
             <select
               onChange={(e) => setSearchField(e.target.value)}
               className="filter-select"
+              value={searchField}
             >
               {tableData.length > 0 && (
                 <>
                   {Object.keys(tableData[0]).map((field, index) => {
-                    // Include only top-level fields that are strings or numbers
-                    if (typeof tableData[0][field] === "string" || typeof tableData[0][field] === "number") {
+                    if (
+                      field !== "id" && 
+                      (typeof tableData[0][field] === "string" || typeof tableData[0][field] === "number")
+                    ) {
                       return (
                         <option key={index} value={field}>
                           {field.charAt(0).toUpperCase() + field.slice(1)}
@@ -245,11 +253,10 @@ const DataTable = ({ tableName }) => {
               )}
             </select>
 
-
             <div className="search-input-wrapper">
               <input
                 type="text"
-                placeholder={`Search by ${searchField}`}
+                placeholder={`Search by ${searchField || "select a field"}`} // Display dynamic placeholder
                 value={searchQuery}
                 onChange={handleSearchChange}
                 className="search-input"
