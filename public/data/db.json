@@ -222,7 +222,7 @@
       "email": "isabel@example.com",
       "phone": "+5544332211",
       "status": "active",
-      "salary": "87000,00"
+      "salary": "86000,00"
     },
     {
       "id": "E11",
@@ -320,6 +320,15 @@
       "role": "Knjigovodja",
       "email": "ivana@gmail.com",
       "phone": "+381 64 123987",
+      "status": "active",
+      "salary": "102000,00"
+    },
+    {
+      "id": "d03a",
+      "name": "Jovana",
+      "role": "Manager",
+      "email": "jovana@test.com",
+      "phone": "03214687",
       "status": "active",
       "salary": "102000,00"
     }

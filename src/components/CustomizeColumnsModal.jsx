@@ -10,9 +10,9 @@ const CustomizeColumnsModal = ({ allColumns, visibleColumns, setVisibleColumns, 
     );
   };
 
-  const handleCancel = () => {
-    onClose(); // Call onClose to toggle modal visibility
-  };
+  // const handleCancel = () => {
+  //   onClose(); // Call onClose to toggle modal visibility
+  // };
   
   return (
     <div className="modal">
@@ -34,7 +34,7 @@ const CustomizeColumnsModal = ({ allColumns, visibleColumns, setVisibleColumns, 
         ))}
       </div>
       <div className="modal-footer">
-        <button onClick={handleCancel} className="btn btn-transparent">Cancel</button>
+        <button onClick={onClose} className="btn btn-transparent">Cancel</button>
         <button onClick={onSave} className="btn">Save and Close</button>
       </div>
     </div>
