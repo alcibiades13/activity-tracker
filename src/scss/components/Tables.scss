@@ -13,23 +13,29 @@
     background-color: $purple-100;
 }
 
+.table-title {
+  margin-bottom: $padding-x;
+  color: $purple-900;
+}
+
 .table {
   border: 1px solid $light-bg-700;
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: $padding-mid;
   tr,
   thead {
     margin-bottom: $padding-small;
     margin-bottom: 0;
     border-bottom: 2px solid $light-bg-700;
     color: $purple-900;
-    font-size: 15px;
+    font-size: 14px;
     width: 100%;
 
     td, th {
       margin-right: $padding-small;
       text-align: left;
-      padding: 12px 10px;
+      padding: 10px;
     }
     tr {
       background-color: $white;
@@ -49,22 +55,13 @@
     }
   }
 
-  &.projects span {
-    &:nth-of-type(2) {
-      flex-grow: 1;
-    }
-    &:nth-of-type(4) {
-      flex-grow: 2;
-    }
-  }
-
   thead {
     tr {
       background: $purple-50;
     }
     th {
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       color: $grey-400;
     }
@@ -131,7 +128,22 @@
     font-size: 20px;
     color: $purple-900;
  }
+
+ &.cascading {
+  tr {
+    cursor: pointer;
+
+    &:hover {
+      background-color: $light-bg-100;
+    }
+  }
+ }
 }
+
+.table-small {
+  width: 50%;
+}
+
 
 .dropdown-container {
     position: relative;

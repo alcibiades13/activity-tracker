@@ -9,6 +9,7 @@ import AddEmployeePage from "./pages/AddEmployeePage";
 import EditEmployeePage from "./pages/EditEmployeePage";
 import Employees from "./pages/Employees";
 import Financials from "./pages/Financials";
+import TroskoviTable from "./pages/TroskoviTable";
 
 const App = () => <RouterProvider router={router} />;
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/edit-employee/:id",
         element: <EditEmployeePage />
+      },
+      {
+        path: "/troskovi_mesecni",
+        element: <TroskoviTable />,
       }
     ],
   },

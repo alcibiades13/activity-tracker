@@ -22,7 +22,6 @@ body {
 
 .app {
   display: flex;
-  // flex-direction: column;
   background-color: $light-bg-400;
 }
 
@@ -60,4 +59,29 @@ body {
   background-color: $white;
 }
 
+.grid-container {
+  display: flex;
+  gap: $gap-large;
+}
 
+.col-6 {
+  width: 50%;
+}
+
+.col-3 {
+  width: calc(100% / 12 * 3);
+}
+
+.col-9 {
+  width: calc(100% / 12 * 9);
+}
+
+.col-12 {
+  width: 100%;  
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  gap: $gap-mid;
+}

@@ -96,18 +96,37 @@ const DataTable = ({ tableName }) => {
 
   console.log("Table Data:", tableData);
 
+  const searchInObject = (obj, query) => {
+    // If the object is an array, check each item
+    if (Array.isArray(obj)) {
+      return obj.some(item => searchInObject(item, query));
+    }
+
+    // If it's an object, iterate through its values
+    if (typeof obj === 'object' && obj !== null) {
+      return Object.values(obj).some(value => searchInObject(value, query));
+    }
+
+    // Handle numeric and string comparisons
+    if (typeof obj === 'number') {
+      return String(obj).includes(query);
+    }
+    
+    // Fallback to string comparison
+    return typeof obj === 'string' && obj.toLowerCase().includes(query.toLowerCase());
+  };
+
   const filteredTableRows = tableData.filter((dataRow) => {
     if (!searchQuery || !searchField) return true; // Show all rows if searchQuery or searchField is empty
+
     const fieldValue = dataRow[searchField];
 
-    // Only apply search if the field is a string or number
-    if (typeof fieldValue === "string") {
-      return fieldValue.toLowerCase().includes(searchQuery.toLowerCase());
-    } else if (typeof fieldValue === "number") {
-      return fieldValue.toString().includes(searchQuery); // Convert numbers to strings for search
-    }
-    return false; // Ignore non-string, non-number fields
+    // Use the generic search function for fieldValue
+    return searchInObject(fieldValue, searchQuery);
   });
+
+
+
 
 
   console.log('filteredTableRows ' + filteredTableRows);
@@ -190,6 +209,8 @@ const DataTable = ({ tableName }) => {
   // to add classes to specific columns
   const getColumnClass = (column) => {
     switch (column) {
+      case 'name':
+        return 'td-bold';
       case 'status':
         return 'td-center';
       case 'salary':
@@ -229,29 +250,25 @@ const DataTable = ({ tableName }) => {
         /> */}
 
           <div className="search-container">
-            <select
-              onChange={(e) => setSearchField(e.target.value)}
-              className="filter-select"
-              value={searchField}
-            >
+            <select onChange={(e) => setSearchField(e.target.value)} className="filter-select">
               {tableData.length > 0 && (
                 <>
                   {Object.keys(tableData[0]).map((field, index) => {
-                    if (
-                      field !== "id" && 
-                      (typeof tableData[0][field] === "string" || typeof tableData[0][field] === "number")
-                    ) {
-                      return (
-                        <option key={index} value={field}>
-                          {field.charAt(0).toUpperCase() + field.slice(1)}
-                        </option>
-                      );
+                    // Exclude the 'id' field and any other unwanted fields
+                    if (field === 'id') return null; 
+                    if (typeof tableData[0][field] === "object") {
+                      // You can add logic here if you want to show nested properties or specific object fields
                     }
-                    return null;
+                    return (
+                      <option key={index} value={field}>
+                        {field.charAt(0).toUpperCase() + field.slice(1)}
+                      </option>
+                    );
                   })}
                 </>
               )}
             </select>
+
 
             <div className="search-input-wrapper">
               <input

@@ -182,6 +182,12 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
+            <NavLink to="/troskovi_mesecni" className="nav-link">
+              <FontAwesomeIcon icon={faDollarSign} className="nav-icon" />
+              Mesečni troškovi
+            </NavLink>
+          </li>
+          <li className="nav-item">
             <NavLink to="/reports" className="nav-link">
               <FontAwesomeIcon icon={faClipboardList} className="nav-icon" />
               Reports
