@@ -20,6 +20,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .table tr,
 .table thead {
@@ -114,11 +115,22 @@
   font-size: 20px;
   color: #393d5e;
 }
-.table.cascading tr {
+.table.cascading tbody tr {
   cursor: pointer;
 }
-.table.cascading tr:hover {
+.table.cascading tbody tr:hover {
   background-color: #fbfbfd;
+}
+.table .active-row {
+  border: 2px solid #484fad; /* Example border color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Example box shadow */
+  background-color: #fbfbfd; /* Light background to highlight */
+}
+.table .active-row td {
+  border-top: 2px solid #484fad !important;
+}
+.table .active-row:last-of-type {
+  border-bottom: 2px solid #484fad;
 }
 
 .table-small {

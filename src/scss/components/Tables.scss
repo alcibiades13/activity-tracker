@@ -23,6 +23,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: $padding-mid;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   tr,
   thead {
     margin-bottom: $padding-small;
@@ -130,7 +131,7 @@
  }
 
  &.cascading {
-  tr {
+  tbody tr {
     cursor: pointer;
 
     &:hover {
@@ -138,6 +139,18 @@
     }
   }
  }
+
+  .active-row {
+    border: 2px solid $purple-400; /* Example border color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Example box shadow */
+    background-color: $light-bg-100; /* Light background to highlight */
+    td {
+      border-top: 2px solid $purple-400 !important;
+    }
+    &:last-of-type {
+      border-bottom: 2px solid $purple-400;
+    }
+  }
 }
 
 .table-small {

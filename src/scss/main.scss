@@ -28,7 +28,6 @@ body {
 .eq-width {
   display: flex;
   flex-direction: column;
-  // flex: 1;
   flex-grow: 1;
   width: 48%;
 }
@@ -83,5 +82,5 @@ body {
 .row {
   display: flex;
   width: 100%;
-  gap: $gap-mid;
+  gap: $gap-large;
 }

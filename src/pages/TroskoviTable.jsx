@@ -37,7 +37,8 @@ const TroskoviTable = () => {
           </thead>
           <tbody>
             {troskovi.map((trosak) => (
-              <tr key={trosak.id} onClick={() => handleRowClick(trosak.id)}>
+              <tr key={trosak.id} onClick={() => handleRowClick(trosak.id)} 
+                  className={selectedTrosakId === trosak.id ? 'active-row' : ''}>
                 <td>{trosak.kategorija}</td>
                 <td>{trosak.iznos.toLocaleString('sr-RS', { style: 'currency', currency: 'RSD' })}</td>
               </tr>
