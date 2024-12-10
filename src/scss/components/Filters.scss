@@ -1,0 +1,15 @@
+@import "../variables.scss";
+
+.filters {
+    display: flex;
+    gap: $gap-mid;
+}
+
+.filter-group {
+
+    select, input {
+        height: 100%;
+        padding: $padding-x;
+        font-size: 14px;
+    }
+}

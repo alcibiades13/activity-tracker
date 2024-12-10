@@ -10,6 +10,7 @@ import {
   faDollarSign,
   faChevronDown,
   faAnglesLeft,
+  faBook,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
@@ -108,7 +109,7 @@ const Sidebar = () => {
     <div className="sidebar" id="sidebar" ref={sidebarRef}>
       <div className="sidebar-header">
         <img
-          src="/images/logo-3.png"
+          src="/images/diz_digital_logo.png"
           alt="Gradjevinco"
           className="sidebar-logo"
         />
@@ -185,6 +186,12 @@ const Sidebar = () => {
             <NavLink to="/troskovi_mesecni" className="nav-link">
               <FontAwesomeIcon icon={faDollarSign} className="nav-icon" />
               Mesečni troškovi
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/radni_dnevnik" className="nav-link">
+              <FontAwesomeIcon icon={faBook} className="nav-icon" />
+              Radni Dnevnik
             </NavLink>
           </li>
           <li className="nav-item">

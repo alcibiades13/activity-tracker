@@ -140,6 +140,84 @@
           "dueDate": "2024-03-01"
         }
       ]
+    },
+    {
+      "id": "8613",
+      "tasks": "Osnivanje temelja",
+      "name": "Autobuska stanica Beograd",
+      "status": "Active",
+      "startDate": "2024-12-04",
+      "endDate": "2025-01-22"
+    },
+    {
+      "id": "0c5a",
+      "tasks": [
+        {
+          "description": "Izolovanje terena i iskopavanje",
+          "assignedTo": "Milan",
+          "dueDate": "2024-12-18"
+        }
+      ],
+      "name": "BelExpo",
+      "status": "Active",
+      "startDate": "2024-12-10",
+      "endDate": "2024-12-17"
+    },
+    {
+      "id": "5f3a",
+      "name": "Beograd na vodi",
+      "status": "Pending",
+      "startDate": "2024-12-11",
+      "endDate": "2025-02-20",
+      "tasks": [
+        {
+          "description": "Rusenje sava male",
+          "assignedTo": "Starting",
+          "dueDate": "2025-01-22"
+        },
+        {
+          "description": "Uklanjanje savskog mosta",
+          "assignedTo": "Ras inzenjering",
+          "dueDate": "2025-01-10"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Tirsova",
+      "status": "Active",
+      "startDate": "2024-12-12",
+      "endDate": "2025-01-09",
+      "description": "Ciscenje terena",
+      "assignedTo": "Dragan",
+      "dueDate": "2024-12-25",
+      "tasks": [
+        {
+          "id": "2",
+          "description": "Ciscenje terena",
+          "assignedTo": "Dragan",
+          "dueDate": "2024-12-26",
+          "status": "Pending"
+        },
+        {
+          "id": "4",
+          "description": "Uklanjanje vodovodnih cevi",
+          "assignedTo": "Milan",
+          "dueDate": "2024-12-31",
+          "status": "Pending"
+        }
+      ]
+    },
+    {
+      "id": "a419",
+      "tasks": [
+        {}
+      ],
+      "name": "asdgasdga",
+      "status": "Active",
+      "startDate": "2024-12-11",
+      "endDate": "2024-12-18",
+      "undefined": []
     }
   ],
   "employees": [
@@ -493,6 +571,30 @@
       "description": "Stakeholder meeting for project status",
       "date": "2024-04-25",
       "durationHours": 2
+    },
+    {
+      "id": "d151",
+      "projectId": "5",
+      "activityType": "Prevoz",
+      "description": "Odvoz sa gradilista",
+      "date": "2024-12-04",
+      "durationHours": "32"
+    },
+    {
+      "id": "48b0",
+      "projectId": "7",
+      "activityType": "Tesarski radovi",
+      "description": "Osnivanje temelja",
+      "date": "2024-12-05",
+      "durationHours": "18"
+    },
+    {
+      "id": "61bb",
+      "activityType": "Beograd na vodi",
+      "projectId": "8",
+      "description": "Iskopni radovi",
+      "date": "2024-12-12",
+      "durationHours": "96"
     }
   ],
   "financials": [
@@ -527,26 +629,6 @@
       "id": "6702"
     },
     {
-      "month": "2023-06",
-      "revenue": 20000,
-      "expenses": 6000,
-      "biggestExpense": {
-        "category": "Utilities",
-        "amount": 2000
-      },
-      "id": "1c62"
-    },
-    {
-      "month": "2023-05",
-      "revenue": 22000,
-      "expenses": 10000,
-      "biggestExpense": {
-        "category": "Supplies",
-        "amount": 3500
-      },
-      "id": "1c4f"
-    },
-    {
       "month": "2023-04",
       "revenue": 17000,
       "expenses": 12000,
@@ -555,36 +637,6 @@
         "amount": 7000
       },
       "id": "f645"
-    },
-    {
-      "month": "2023-03",
-      "revenue": 16000,
-      "expenses": 11000,
-      "biggestExpense": {
-        "category": "Rent",
-        "amount": 4000
-      },
-      "id": "cdfe"
-    },
-    {
-      "month": "2023-02",
-      "revenue": 19000,
-      "expenses": 8000,
-      "biggestExpense": {
-        "category": "Marketing",
-        "amount": 4500
-      },
-      "id": "432b"
-    },
-    {
-      "month": "2023-01",
-      "revenue": 21000,
-      "expenses": 9500,
-      "biggestExpense": {
-        "category": "Utilities",
-        "amount": 3000
-      },
-      "id": "2f9e"
     },
     {
       "month": "2022-12",
@@ -619,303 +671,457 @@
   ],
   "troskovi": [
     {
-      "id": 1,
+      "id": "1",
       "kategorija": "Lizing - građevinske mašine i prikolice",
       "iznos": 3588654.39
     },
     {
-      "id": 2,
+      "id": "2",
       "kategorija": "Lizing i zakup - kamioni",
       "iznos": 4315024.83
     },
     {
-      "id": 3,
+      "id": "3",
       "kategorija": "Materijal",
-      "iznos": 19636757.60
+      "iznos": 19636757.6
     },
     {
-      "id": 4,
+      "id": "4",
       "kategorija": "Servis i delovi",
       "iznos": 1832077.05
     },
     {
-      "id": 5,
+      "id": "5",
       "kategorija": "Zaposleni troškovi",
-      "iznos": 2451234.50
+      "iznos": 2451234.5
     },
     {
-      "id": 6,
+      "id": "6",
       "kategorija": "Transport",
-      "iznos": 1204657.20
+      "iznos": 1204657.2
     },
     {
-      "id": 7,
+      "id": "7",
       "kategorija": "Komunalne usluge",
-      "iznos": 300000.00
+      "iznos": 300000
     },
     {
-      "id": 8,
+      "id": "8",
       "kategorija": "Održavanje",
-      "iznos": 890000.00
+      "iznos": 890000
     },
     {
-      "id": 9,
+      "id": "9",
       "kategorija": "Osiguranje",
-      "iznos": 450000.00
+      "iznos": 450000
     },
     {
-      "id": 10,
+      "id": "10",
       "kategorija": "Administrativni troškovi",
-      "iznos": 2350000.00
+      "iznos": 2350000
     }
   ],
   "troskovi_po_dobavljacu": [
     {
-      "id": 1,
+      "id": "1",
       "troskovi_id": 3,
       "dobavljac": "Dobavljač 1",
-      "iznos": 5000000.00
+      "iznos": 5000000
     },
     {
-      "id": 2,
+      "id": "2",
       "troskovi_id": 3,
       "dobavljac": "Dobavljač 2",
-      "iznos": 3000000.00
+      "iznos": 3000000
     },
     {
-      "id": 3,
+      "id": "3",
       "troskovi_id": 3,
       "dobavljac": "Dobavljač 3",
-      "iznos": 600000.00
+      "iznos": 600000
     },
     {
-      "id": 4,
+      "id": "4",
       "troskovi_id": 3,
       "dobavljac": "Dobavljač 4",
-      "iznos": 2000000.00
+      "iznos": 2000000
     }
   ],
   "troskovi_po_vrsti_materijala": [
     {
-      "id": 1,
+      "id": "1",
       "troskovi_id": 3,
       "vrsta_materijala": "Vrsta 1",
-      "iznos": 2500000.00
+      "iznos": 2500000
     },
     {
-      "id": 2,
+      "id": "2",
       "troskovi_id": 3,
       "vrsta_materijala": "Vrsta 2",
-      "iznos": 1500000.00
+      "iznos": 1500000
     },
     {
-      "id": 3,
+      "id": "3",
       "troskovi_id": 3,
       "vrsta_materijala": "Vrsta 3",
-      "iznos": 1000000.00
+      "iznos": 1000000
     },
     {
-      "id": 4,
+      "id": "4",
       "troskovi_id": 3,
       "vrsta_materijala": "Vrsta 4",
-      "iznos": 750000.00
+      "iznos": 750000
     }
   ],
   "troskovi_po_dobavljacu_detaljno": [
     {
-      "id": 1,
+      "id": "1",
       "troskovi_id": 3,
       "dobavljac_id": 1,
       "dobavljac": "Dobavljač 1",
       "datum_kupovine": "2023-01-15",
-      "iznos": 125000.00,
+      "iznos": 125000,
       "broj_narudzbine": "PO-1001",
       "vrsta_materijala": "Cement",
       "kolicina": 100,
       "jedinicna_cena": 1250,
-      "ukupni_iznos": 125000.00
+      "ukupni_iznos": 125000
     },
     {
-      "id": 2,
+      "id": "2",
       "troskovi_id": 3,
       "dobavljac_id": 1,
       "dobavljac": "Dobavljač 1",
       "datum_kupovine": "2023-02-10",
-      "iznos": 75000.00,
+      "iznos": 75000,
       "broj_narudzbine": "PO-1002",
       "vrsta_materijala": "Čelične šipke",
       "kolicina": 50,
       "jedinicna_cena": 1500,
-      "ukupni_iznos": 75000.00
+      "ukupni_iznos": 75000
     },
     {
-      "id": 3,
+      "id": "3",
       "troskovi_id": 3,
       "dobavljac_id": 2,
       "dobavljac": "Dobavljač 2",
       "datum_kupovine": "2023-03-05",
-      "iznos": 50000.00,
+      "iznos": 50000,
       "broj_narudzbine": "PO-1003",
       "vrsta_materijala": "Drvo",
       "kolicina": 200,
       "jedinicna_cena": 250,
-      "ukupni_iznos": 50000.00
+      "ukupni_iznos": 50000
     },
     {
-      "id": 4,
+      "id": "4",
       "troskovi_id": 3,
       "dobavljac_id": 1,
       "dobavljac": "Dobavljač 1",
       "datum_kupovine": "2023-04-01",
-      "iznos": 130000.00,
+      "iznos": 130000,
       "broj_narudzbine": "PO-1004",
       "vrsta_materijala": "Cigle",
       "kolicina": 1500,
       "jedinicna_cena": 87,
-      "ukupni_iznos": 130500.00
+      "ukupni_iznos": 130500
     },
     {
-      "id": 5,
+      "id": "5",
       "troskovi_id": 3,
       "dobavljac_id": 3,
       "dobavljac": "Dobavljač 3",
       "datum_kupovine": "2023-04-15",
-      "iznos": 95000.00,
+      "iznos": 95000,
       "broj_narudzbine": "PO-1005",
       "vrsta_materijala": "Betonska mešavina",
       "kolicina": 500,
       "jedinicna_cena": 190,
-      "ukupni_iznos": 95000.00
+      "ukupni_iznos": 95000
     },
     {
-      "id": 6,
+      "id": "6",
       "troskovi_id": 3,
       "dobavljac_id": 2,
       "dobavljac": "Dobavljač 2",
       "datum_kupovine": "2023-05-10",
-      "iznos": 60000.00,
+      "iznos": 60000,
       "broj_narudzbine": "PO-1006",
       "vrsta_materijala": "Plocice",
       "kolicina": 1200,
       "jedinicna_cena": 50,
-      "ukupni_iznos": 60000.00
+      "ukupni_iznos": 60000
     },
     {
-      "id": 7,
+      "id": "7",
       "troskovi_id": 3,
       "dobavljac_id": 4,
       "dobavljac": "Dobavljač 4",
       "datum_kupovine": "2023-06-01",
-      "iznos": 105000.00,
+      "iznos": 105000,
       "broj_narudzbine": "PO-1007",
       "vrsta_materijala": "Pesak",
       "kolicina": 1000,
       "jedinicna_cena": 105,
-      "ukupni_iznos": 105000.00
+      "ukupni_iznos": 105000
     },
     {
-      "id": 8,
+      "id": "8",
       "troskovi_id": 3,
       "dobavljac_id": 1,
       "dobavljac": "Dobavljač 1",
       "datum_kupovine": "2023-07-05",
-      "iznos": 80000.00,
+      "iznos": 80000,
       "broj_narudzbine": "PO-1008",
       "vrsta_materijala": "Šljunak",
       "kolicina": 700,
       "jedinicna_cena": 115,
-      "ukupni_iznos": 80500.00
+      "ukupni_iznos": 80500
     },
     {
-      "id": 9,
+      "id": "9",
       "troskovi_id": 3,
       "dobavljac_id": 3,
       "dobavljac": "Dobavljač 3",
       "datum_kupovine": "2023-07-10",
-      "iznos": 120000.00,
+      "iznos": 120000,
       "broj_narudzbine": "PO-1009",
       "vrsta_materijala": "Boje",
       "kolicina": 300,
       "jedinicna_cena": 400,
-      "ukupni_iznos": 120000.00
+      "ukupni_iznos": 120000
     },
     {
-      "id": 10,
+      "id": "10",
       "troskovi_id": 3,
       "dobavljac_id": 4,
       "dobavljac": "Dobavljač 4",
       "datum_kupovine": "2023-08-15",
-      "iznos": 110000.00,
+      "iznos": 110000,
       "broj_narudzbine": "PO-1010",
       "vrsta_materijala": "Drvena građa",
       "kolicina": 400,
       "jedinicna_cena": 275,
-      "ukupni_iznos": 110000.00
+      "ukupni_iznos": 110000
     },
     {
-      "id": 11,
+      "id": "11",
       "troskovi_id": 3,
       "dobavljac_id": 2,
       "dobavljac": "Dobavljač 2",
       "datum_kupovine": "2023-08-20",
-      "iznos": 72000.00,
+      "iznos": 72000,
       "broj_narudzbine": "PO-1011",
       "vrsta_materijala": "Čelik",
       "kolicina": 200,
       "jedinicna_cena": 360,
-      "ukupni_iznos": 72000.00
+      "ukupni_iznos": 72000
     },
     {
-      "id": 12,
+      "id": "12",
       "troskovi_id": 3,
       "dobavljac_id": 1,
       "dobavljac": "Dobavljač 1",
       "datum_kupovine": "2023-09-01",
-      "iznos": 105000.00,
+      "iznos": 105000,
       "broj_narudzbine": "PO-1012",
       "vrsta_materijala": "Peskovan kamen",
       "kolicina": 800,
       "jedinicna_cena": 130,
-      "ukupni_iznos": 104000.00
+      "ukupni_iznos": 104000
     },
     {
-      "id": 13,
+      "id": "13",
       "troskovi_id": 3,
       "dobavljac_id": 3,
       "dobavljac": "Dobavljač 3",
       "datum_kupovine": "2023-09-10",
-      "iznos": 95000.00,
+      "iznos": 95000,
       "broj_narudzbine": "PO-1013",
       "vrsta_materijala": "Cigle",
       "kolicina": 1200,
       "jedinicna_cena": 79,
-      "ukupni_iznos": 94800.00
+      "ukupni_iznos": 94800
     },
     {
-      "id": 14,
+      "id": "14",
       "troskovi_id": 3,
       "dobavljac_id": 4,
       "dobavljac": "Dobavljač 4",
       "datum_kupovine": "2023-10-01",
-      "iznos": 85000.00,
+      "iznos": 85000,
       "broj_narudzbine": "PO-1014",
       "vrsta_materijala": "Cement",
       "kolicina": 600,
       "jedinicna_cena": 140,
-      "ukupni_iznos": 84000.00
+      "ukupni_iznos": 84000
     },
     {
-      "id": 15,
+      "id": "15",
       "troskovi_id": 3,
       "dobavljac_id": 2,
       "dobavljac": "Dobavljač 2",
       "datum_kupovine": "2023-10-10",
-      "iznos": 95000.00,
+      "iznos": 95000,
       "broj_narudzbine": "PO-1015",
       "vrsta_materijala": "Drvo",
       "kolicina": 500,
       "jedinicna_cena": 190,
-      "ukupni_iznos": 95000.00
+      "ukupni_iznos": 95000
+    }
+  ],
+  "radni_dnevnik": [
+    {
+      "datum": "2024-11-07",
+      "zaposleni": 123,
+      "gradiliste": 456,
+      "etaz_nivo_formset": [
+        {
+          "id": 1,
+          "nivo": "Nivo 1",
+          "etaza_vrsta_radova_formset": [
+            {
+              "id": 1,
+              "vrsta_radova": "Vrsta 1",
+              "napomena": "Napomena 1",
+              "etaza_pozicija_formset": [
+                {
+                  "id": 1,
+                  "pozicija": "Pozicija 1",
+                  "broj_radnih_sati": 5
+                },
+                {
+                  "id": 2,
+                  "pozicija": "Pozicija 2",
+                  "broj_radnih_sati": 6
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "vrsta_radova": "Vrsta 2",
+              "napomena": "Napomena 2",
+              "etaza_pozicija_formset": [
+                {
+                  "id": 3,
+                  "pozicija": "Pozicija 3",
+                  "broj_radnih_sati": 8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "nivo": "Nivo 2",
+          "etaza_vrsta_radova_formset": [
+            {
+              "id": 3,
+              "vrsta_radova": "Vrsta 3",
+              "napomena": "Napomena 3",
+              "etaza_pozicija_formset": [
+                {
+                  "id": 4,
+                  "pozicija": "Pozicija 4",
+                  "broj_radnih_sati": 7
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "423e"
+    },
+    {
+      "datum": "2024-11-05",
+      "zaposleni": 134,
+      "gradiliste": 789,
+      "etaz_nivo_formset": [
+        {
+          "id": 1,
+          "nivo": "Nivo 1",
+          "etaza_vrsta_radova_formset": [
+            {
+              "id": 1,
+              "vrsta_radova": "Vrsta 1",
+              "napomena": "Napomena 1",
+              "etaza_pozicija_formset": [
+                {
+                  "id": 1,
+                  "pozicija": "Pozicija 1",
+                  "broj_radnih_sati": 8
+                },
+                {
+                  "id": 2,
+                  "pozicija": "Pozicija 2",
+                  "broj_radnih_sati": 7
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "vrsta_radova": "Vrsta 2",
+              "napomena": "Napomena 2",
+              "etaza_pozicija_formset": [
+                {
+                  "id": 1,
+                  "pozicija": "Pozicija 1",
+                  "broj_radnih_sati": 4
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "ac68"
+    },
+    {
+      "datum": "2024-10-30",
+      "zaposleni": 150,
+      "gradiliste": 456,
+      "etaz_nivo_formset": [
+        {
+          "id": 1,
+          "nivo": "Nivo 1",
+          "etaza_vrsta_radova_formset": [
+            {
+              "id": 1,
+              "vrsta_radova": "Vrsta 1",
+              "napomena": "Napomena 1",
+              "etaza_pozicija_formset": [
+                {
+                  "id": 1,
+                  "pozicija": "Pozicija 1",
+                  "broj_radnih_sati": 6
+                },
+                {
+                  "id": 2,
+                  "pozicija": "Pozicija 2",
+                  "broj_radnih_sati": 5
+                },
+                {
+                  "id": 3,
+                  "pozicija": "Pozicija 3",
+                  "broj_radnih_sati": 8
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "vrsta_radova": "Vrsta 2",
+              "napomena": "Napomena 2",
+              "etaza_pozicija_formset": [
+                {
+                  "id": 1,
+                  "pozicija": "Pozicija 1",
+                  "broj_radnih_sati": 10
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "1729"
     }
   ]
 }

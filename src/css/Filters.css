@@ -1,0 +1,10 @@
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-group select, .filter-group input {
+  height: 100%;
+  padding: 0.5rem;
+  font-size: 14px;
+}/*# sourceMappingURL=Filters.css.map */

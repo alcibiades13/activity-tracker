@@ -1,0 +1,63 @@
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+// input[type="text"],
+// input[type="number"],
+// input[type="date"] {
+//   width: 100%;
+//   padding: 8px;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+// }
+
+.etaz-section, .pozicija-section {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.etaz-section {
+  border-color: #2c7be5;
+  background-color: #f0f8ff;
+}
+
+.pozicija-section {
+  border-color: #20d88b;
+  background-color: #e6f9f2;
+  margin-left: 20px;
+}
+
+button[type="button"] {
+  margin: 10px 5px;
+  padding: 8px 12px;
+  background-color: #2c7be5;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #20d88b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}

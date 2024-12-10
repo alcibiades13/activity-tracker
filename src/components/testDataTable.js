@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faSliders } from '@fortawesome/free-solid-svg-icons';
 import CustomizeColumnsModal from "../components/CustomizeColumnsModal";
 import PropTypes from "prop-types";
 import DataRow from "./DataRow";
-import TableControls from "./TableControls";
-import { extractColumns } from "../lib/columnUtils";
-import { searchInObject } from "../lib/filterUtils";
-import { capitalizeString } from "../lib/generalUtils";
-import { getColumnClass } from '../lib/columnUtils';
 
 
 
@@ -26,13 +24,11 @@ const DataTable = ({ tableName }) => {
   const [initialVisibleColumns, setInitialVisibleColumns] = useState([]); // save for when cancel is clicked
   const [modalOpen, setModalOpen] = useState(false); // State to manage modal visibility
 
-  const [filters, setFilters] = useState({}); // Define filters state here
-
 
  useEffect(() => {
     // Fetching data
     axios
-      .get(`http://localhost:5000/${tableName}`)
+      .get(http://localhost:5000/${tableName})
       .then((response) => {
         // Set the table data
         setTableData(response.data);
@@ -40,7 +36,16 @@ const DataTable = ({ tableName }) => {
         
         // Process columns only after data has been set
         if (response.data.length > 0) {
-          const nestedColumns = extractColumns(response.data);
+          const mainColumns = Object.keys(response.data[0]);
+
+          const nestedColumns = mainColumns.flatMap((column) => {
+            if (Array.isArray(response.data[0][column])) {
+              return response.data[0][column].length > 0
+                ? Object.keys(response.data[0][column][0]).map((nestedField) => ${column}.${nestedField})
+                : [];
+            }
+            return column;
+          });
           const dataColumns = Object.keys(response.data[0]);
 
           // Update states after processing
@@ -68,43 +73,36 @@ const DataTable = ({ tableName }) => {
     }
   }, [tableData, searchField]);
 
-
   console.log("Table Data:", tableData);
 
-  // const filteredTableRows = tableData.filter((dataRow) => {
-  //   if (!searchQuery || !searchField) return true; 
+  const searchInObject = (obj, query) => {
+    // If the object is an array, check each item
+    if (Array.isArray(obj)) {
+      return obj.some(item => searchInObject(item, query));
+    }
 
-  //   const fieldValue = dataRow[searchField];
+    // If it's an object, iterate through its values
+    if (typeof obj === 'object' && obj !== null) {
+      return Object.values(obj).some(value => searchInObject(value, query));
+    }
 
-  //   return searchInObject(fieldValue, searchQuery);
-  // });
+    // Handle numeric and string comparisons
+    if (typeof obj === 'number') {
+      return String(obj).includes(query);
+    }
+    
+    // Fallback to string comparison
+    return typeof obj === 'string' && obj.toLowerCase().includes(query.toLowerCase());
+  };
 
   const filteredTableRows = tableData.filter((dataRow) => {
-      // Search Filter
-      if (searchQuery && searchField) {
-          const fieldValue = dataRow[searchField];
-          if (!searchInObject(fieldValue, searchQuery)) {
-              return false; // Exclude row if search doesn't match
-          }
-      }
+    if (!searchQuery || !searchField) return true; // Show all rows if searchQuery or searchField is empty
 
-      // Dynamic Filters
-      return Object.entries(filters).every(([filterKey, filterValue]) => {
-          if (!filterValue) return true; // Skip if no filter applied
+    const fieldValue = dataRow[searchField];
 
-          // Handle Date Filter
-          if (filterKey === "date") {
-              const rowDate = new Date(dataRow[filterKey]);
-              const filterDate = new Date(filterValue);
-              return rowDate >= filterDate; // Only include rows on or after the filter date
-          }
-
-          // Default: Strict Equality for Other Filters
-          return dataRow[filterKey] === filterValue;
-      });
+    // Use the generic search function for fieldValue
+    return searchInObject(fieldValue, searchQuery);
   });
-
-
 
 
   console.log('filteredTableRows ' + filteredTableRows);
@@ -131,15 +129,36 @@ const DataTable = ({ tableName }) => {
       const confirmDelete = window.confirm("Are you sure you want to delete this employee?");
       if (confirmDelete) {
           try {
-              await axios.delete(`http://localhost:5000/${tableName}/${tableRowId}`); // Adjust the endpoint accordingly
+              await axios.delete(http://localhost:5000/${tableName}/${tableRowId}); // Adjust the endpoint accordingly
               setTableData((prevTableData) => prevTableData.filter(dat => dat.id !== tableRowId));
-              console.log(`Employee ${tableRowId} deleted successfully.`);
+              console.log(Employee ${tableRowId} deleted successfully.);
           } catch (error) {
               console.error("Error deleting employee:", error);
           }
       }
   };
 
+  // Bulk delete selected employees
+  const handleBulkDelete = () => {
+    const confirmDelete = window.confirm(
+      Are you sure you want to delete ${selectedTableRows.length} employees?
+    );
+    if (confirmDelete) {
+      selectedTableRows.forEach((tableRowId) => {
+        axios
+          .delete(http://localhost:5000/${tableName}/${tableRowId})
+          .then(() => {
+            setTableData((prevTableData) =>
+              prevTableData.filter((tableRow) => tableRow.id !== tableRowId)
+            );
+          })
+          .catch((error) => {
+            console.error("Error deleting table row:", error);
+          });
+      });
+      setSelectedTableRows([]); // Clear the selection after deletion
+    }
+  };
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
@@ -162,6 +181,21 @@ const DataTable = ({ tableName }) => {
     setModalOpen(false); // Close the modal
   };
 
+  // to add classes to specific columns
+  const getColumnClass = (column) => {
+    switch (column) {
+      case 'name':
+        return 'td-bold';
+      case 'status':
+        return 'td-center';
+      case 'salary':
+        return 'td-right';
+      default:
+        return ''; // No special class for other columns
+    }
+  };
+
+
   console.log(visibleColumns);
     console.log(typeof(visibleColumns));
 
@@ -178,23 +212,60 @@ const DataTable = ({ tableName }) => {
         />
       )}
 
-      <TableControls
-        tableData={tableData}
-        searchField={searchField}
-        setSearchField={setSearchField}
-        searchQuery={searchQuery}
-        handleSearchChange={handleSearchChange}
-        setTableData={setTableData}
-        selectedTableRows={selectedTableRows}
-        setSelectedTableRows={setSelectedTableRows}
-        tableName={tableName}
-        handleToggleModal={handleToggleModal}
-        tableType={tableName}
-        filters={filters}
-        setFilters={setFilters}
-      />
+      <div className="table-actions">
+        <div className="actions-left">
 
-      <table className={`table ${tableName}`}>
+          <div className="search-container">
+            <select onChange={(e) => setSearchField(e.target.value)} className="filter-select">
+              {tableData.length > 0 && (
+                <>
+                  {Object.keys(tableData[0]).map((field, index) => {
+                    // Exclude the 'id' field and any other unwanted fields
+                    if (field === 'id') return null; 
+                    if (typeof tableData[0][field] === "object") {
+                      // You can add logic here if you want to show nested properties or specific object fields
+                    }
+                    return (
+                      <option key={index} value={field}>
+                        {field.charAt(0).toUpperCase() + field.slice(1)}
+                      </option>
+                    );
+                  })}
+                </>
+              )}
+            </select>
+
+
+            <div className="search-input-wrapper">
+              <input
+                type="text"
+                placeholder={Search by ${searchField || "select a field"}} // Display dynamic placeholder
+                value={searchQuery}
+                onChange={handleSearchChange}
+                className="search-input"
+              />
+              <FontAwesomeIcon icon={faSearch} className="search-icon" />
+            </div>
+          </div>
+        </div>
+
+        <div className="actions-right">
+          <button
+            onClick={handleBulkDelete}
+            disabled={selectedTableRows.length === 0}
+            className="btn btn-delete-selected"
+          >
+            Delete Selected ({selectedTableRows.length})
+          </button>
+
+          <Link to="/add-employee">
+            <button className="btn btn-add">+ Add New {tableName}</button>
+          </Link>
+          <button onClick={handleToggleModal} className="btn btn-customize"><FontAwesomeIcon icon={faSliders} /></button>
+        </div>
+      </div>
+
+      <table className={table ${tableName}}>
         <thead>
             <tr>
             <th>
@@ -210,9 +281,9 @@ const DataTable = ({ tableName }) => {
                 return typeof column === 'string' && visibleColumns.includes(column);
               })
               .map((column) => (
-              <th key={column} className={getColumnClass(column)}>
-                {capitalizeString(column)}
-              </th>
+                <th key={column} className={getColumnClass(column)}>
+                  {column.charAt(0).toUpperCase() + column.slice(1)}
+                </th>
               ))
             }
             <th className="td-center">Actions</th>
@@ -226,6 +297,7 @@ const DataTable = ({ tableName }) => {
               tableName={tableName}
               isChecked={selectedTableRows.includes(tableRow.id)}
               onCheckboxChange={() => handleCheckboxChange(tableRow.id)}
+              // onDelete={() => handleDeleteEmployee}
               onDelete={handleDeleteDataRow}
               visibleColumns={visibleColumns} 
               columnOrder={columnOrder} 

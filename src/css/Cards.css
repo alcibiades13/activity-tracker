@@ -1,0 +1,48 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.data-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.data-field-collapsible {
+  margin-bottom: 10px;
+}
+
+.data-field-header {
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.data-field-header:hover {
+  color: #007bff;
+}
+
+.data-field-body {
+  padding-left: 20px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.data-array-item {
+  margin-bottom: 8px;
+  padding-left: 20px;
+}
+
+.data-card-content {
+  padding: 10px 0;
+}
+
+.data-field {
+  margin-bottom: 5px;
+  font-size: 14px;
+}/*# sourceMappingURL=Cards.css.map */

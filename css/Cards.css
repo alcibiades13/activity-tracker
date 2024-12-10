@@ -1,0 +1,46 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.data-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 12px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.data-card h3 {
+  font-size: 1.25em;
+  margin-bottom: 8px;
+  color: #333;
+}
+.data-card .data-field {
+  margin-bottom: 8px;
+  color: #333;
+}
+.data-card .data-field strong {
+  color: #666;
+  font-weight: bold;
+}
+.data-card .data-field span {
+  color: #333;
+}
+.data-card .data-array {
+  padding-left: 16px;
+  border-left: 2px solid #f0f0f0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.data-card .data-array .data-array-item {
+  margin-bottom: 8px;
+  padding-left: 8px;
+}
+.data-card .data-object {
+  padding: 8px;
+  background-color: #fafafa;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}/*# sourceMappingURL=Cards.css.map */

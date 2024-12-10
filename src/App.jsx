@@ -10,6 +10,10 @@ import EditEmployeePage from "./pages/EditEmployeePage";
 import Employees from "./pages/Employees";
 import Financials from "./pages/Financials";
 import TroskoviTable from "./pages/TroskoviTable";
+import RadniDnevnik from "./pages/RadniDnevnik";
+import AddRadniDnevnikForm from "./components/AddRadniDnevnikForm";
+import AddActivityPage from "./pages/AddActivityPage";
+import AddProjectPage from "./pages/AddProjectPage";
 
 const App = () => <RouterProvider router={router} />;
 
@@ -43,12 +47,28 @@ const router = createBrowserRouter([
         element: <AddEmployeePage />,
       },
       {
+        path: "/add-activities",
+        element: <AddActivityPage />,
+      },
+      {
+        path: "/add-projects",
+        element: <AddProjectPage />,
+      },
+      {
         path: "/edit-employee/:id",
         element: <EditEmployeePage />
       },
       {
         path: "/troskovi_mesecni",
         element: <TroskoviTable />,
+      },
+      {
+        path: "/radni_dnevnik",
+        element: <RadniDnevnik />,
+      },
+      {
+        path: "/add-radni_dnevnik",
+        element: <AddRadniDnevnikForm />,
       }
     ],
   },
