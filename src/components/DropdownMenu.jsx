@@ -5,19 +5,18 @@ import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan as faTrashCanRegular, faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import PropTypes from "prop-types";
 
-const DropdownMenu = ({ employeeId, onDelete, isOpen, handleToggleDropdown }) => {
+const DropdownMenu = ({ rowId, recordName, onDelete, isOpen, handleToggleDropdown }) => {
   const dropdownRef = useRef(null);
 
-    const handleDelete = () => {
-        onDelete(employeeId); // Pass the employeeId to onDelete
-    };
+  const handleDelete = () => {
+    onDelete(rowId); // Pass the rowId to onDelete
+  };
 
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       handleToggleDropdown(); // Close the dropdown when clicking outside
     }
   };
-
 
   useEffect(() => {
     if (isOpen) {
@@ -39,7 +38,7 @@ const DropdownMenu = ({ employeeId, onDelete, isOpen, handleToggleDropdown }) =>
 
       {isOpen && (
         <div className="dropdown-menu">
-          <Link to={`/edit-employee/${employeeId}`} className="dropdown-item">
+          <Link to={`/edit-${recordName}/${rowId}`} className="dropdown-item">
             <FontAwesomeIcon icon={faPenToSquare} className="fa-icon" /> Edit
           </Link>
           <button onClick={handleDelete} className="dropdown-item">
@@ -52,7 +51,9 @@ const DropdownMenu = ({ employeeId, onDelete, isOpen, handleToggleDropdown }) =>
 };
 
 DropdownMenu.propTypes = {
-  employeeId: PropTypes.number.isRequired,
+  rowId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired, // rowId can be a string or number
+  tableName: PropTypes.string.isRequired, // Pass table name dynamically
+  recordName: PropTypes.string.isRequired, // Pass record name dynamically
   onDelete: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired, // Add isOpen as required prop
   handleToggleDropdown: PropTypes.func.isRequired,

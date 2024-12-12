@@ -14,6 +14,7 @@ import RadniDnevnik from "./pages/RadniDnevnik";
 import AddRadniDnevnikForm from "./components/AddRadniDnevnikForm";
 import AddActivityPage from "./pages/AddActivityPage";
 import AddProjectPage from "./pages/AddProjectPage";
+import EditActivityPage from "./pages/EditActivityPage";
 
 const App = () => <RouterProvider router={router} />;
 
@@ -47,16 +48,20 @@ const router = createBrowserRouter([
         element: <AddEmployeePage />,
       },
       {
-        path: "/add-activities",
+        path: "/add-activity",
         element: <AddActivityPage />,
       },
       {
-        path: "/add-projects",
+        path: "/add-project",
         element: <AddProjectPage />,
       },
       {
         path: "/edit-employee/:id",
         element: <EditEmployeePage />
+      },
+      {
+        path: "/edit-activity/:id",
+        element: <EditActivityPage />
       },
       {
         path: "/troskovi_mesecni",

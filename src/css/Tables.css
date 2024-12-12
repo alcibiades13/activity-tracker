@@ -78,6 +78,15 @@
 .table .status-icon.inactive-icon {
   color: #7f8da4;
 }
+.table .status-icon.pending-icon {
+  color: #ffc107;
+}
+.table .status-icon.completed-icon {
+  color: #17a2b8;
+}
+.table .status-icon.unknown-icon {
+  color: #6c757d;
+}
 .table .td-center {
   text-align: center;
 }

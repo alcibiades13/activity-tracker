@@ -9,7 +9,7 @@ const AddActivityPage = () => {
   return (
     <div className="form-wrapper">
       <h1 className="title">Add New Activity</h1>
-      <AddEntryForm type="activities" onEntryAdded={handleEntryAdded} />
+      <AddEntryForm type="activities" recordName="activity" onEntryAdded={handleEntryAdded} />
     </div>
   );
 };

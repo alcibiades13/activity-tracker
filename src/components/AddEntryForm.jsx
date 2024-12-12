@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { getFormFieldsForType } from "../lib/dataUtils";
 import { useNavigate } from "react-router-dom";
 
-const AddEntryForm = ({ type, onEntryAdded }) => {
+const AddEntryForm = ({ type, recordName, onEntryAdded }) => {
   const [formData, setFormData] = useState({});
   const fields = getFormFieldsForType(type);
   const navigate = useNavigate(); // To navigate back after submission
@@ -87,16 +87,20 @@ const AddEntryForm = ({ type, onEntryAdded }) => {
                           id={nestedField.name}
                           name={`${field.name}[${index}].${nestedField.name}`}
                           value={nestedFieldData[nestedField.name] || ""}
-                          onChange={(e) =>
-                            handleNestedChange(e, field.name, index)
-                          }
+                          onChange={(e) => handleNestedChange(e, field.name, index)}
                         >
                           <option value="">{nestedField.placeholder}</option>
-                          {nestedField.options.map((option) => (
-                            <option key={option} value={option}>
-                              {option}
-                            </option>
-                          ))}
+                          {nestedField.options.map((option) =>
+                            typeof option === "object" ? (
+                              <option key={option.value} value={option.value}>
+                                {option.label}
+                              </option>
+                            ) : (
+                              <option key={option} value={option}>
+                                {option}
+                              </option>
+                            )
+                          )}
                         </select>
                       ) : nestedField.fieldType === "date" ? (
                         <input
@@ -140,19 +144,25 @@ const AddEntryForm = ({ type, onEntryAdded }) => {
             <div className="form-group" key={field.name}>
               <label htmlFor={field.name}>{field.label}</label>
               {field.fieldType === "select" ? (
-                <select
-                  id={field.name}
-                  name={field.name}
-                  value={formData[field.name] || ""}
-                  onChange={handleChange}
-                >
-                  <option value="">{field.placeholder}</option>
-                  {field.options.map((option) => (
+              <select
+                id={field.name}
+                name={field.name}
+                value={formData[field.name] || ""}
+                onChange={handleChange}
+              >
+                <option value="">{field.placeholder}</option>
+                {field.options.map((option) =>
+                  typeof option === "object" ? (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ) : (
                     <option key={option} value={option}>
                       {option}
                     </option>
-                  ))}
-                </select>
+                  )
+                )}
+              </select>
               ) : field.fieldType === "date" ? (
                 <input
                   id={field.name}
@@ -177,7 +187,7 @@ const AddEntryForm = ({ type, onEntryAdded }) => {
       })}
 
       <button type="submit" className="submit-btn">
-        Add {type}
+        Add {recordName}
       </button>
     </form>
   );

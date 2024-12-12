@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserCheck, faUserTimes } from "@fortawesome/free-solid-svg-icons";
+import { faUserCheck, faUserTimes, faHourglassHalf, faQuestionCircle, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import DropdownMenu from "./DropdownMenu";
 
 const DataRow = ({
   tableRow,
   tableName,
+  recordName,
   isChecked,
   onCheckboxChange,
   onDelete,
@@ -97,10 +98,16 @@ const DataRow = ({
         if (column === "status") {
           return (
             <td key={column} className={getColumnClass(column)}>
-              {tableRow.status === "active" ? (
-                <FontAwesomeIcon icon={faUserCheck} className="status-icon active-icon" />
+              {tableRow.status.toLowerCase() === "active" ? (
+                  <FontAwesomeIcon icon={faUserCheck} className="status-icon active-icon" />
+              ) : tableRow.status.toLowerCase() === "inactive" ? (
+                  <FontAwesomeIcon icon={faUserTimes} className="status-icon inactive-icon" />
+              ) : tableRow.status.toLowerCase() === "pending" ? (
+                  <FontAwesomeIcon icon={faHourglassHalf} className="status-icon pending-icon" />
+              ) : tableRow.status.toLowerCase() === "completed" ? (
+                  <FontAwesomeIcon icon={faCheckCircle} className="status-icon completed-icon" />
               ) : (
-                <FontAwesomeIcon icon={faUserTimes} className="status-icon inactive-icon" />
+                  <FontAwesomeIcon icon={faQuestionCircle} className="status-icon unknown-icon" />
               )}
             </td>
           );
@@ -115,7 +122,8 @@ const DataRow = ({
 
       <td data-label="Operations" className="td-center">
         <DropdownMenu
-          tableRowId={tableRow.id}
+          rowId={tableRow.id} // Pass the dynamic rowId (could be employee id, project id, etc.)
+          recordName={recordName} // pass the singular name of the table
           onDelete={onDelete}
           isOpen={dropdownOpen}
           handleToggleDropdown={handleToggleDropdown}
@@ -129,6 +137,7 @@ const DataRow = ({
 DataRow.propTypes = {
   tableRow: PropTypes.object.isRequired, // Allow flexibility for any object structure
   tableName: PropTypes.string.isRequired,
+  recordName: PropTypes.string.isRequired,
   isChecked: PropTypes.bool.isRequired,
   onCheckboxChange: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,

@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Project Alpha",
-      "status": "In Progress",
+      "status": "Active",
       "startDate": "2024-01-15",
       "endDate": "2024-06-30",
       "tasks": [
@@ -40,7 +40,7 @@
     {
       "id": "2",
       "name": "Project Beta",
-      "status": "Planning",
+      "status": "Pending",
       "startDate": "2024-03-01",
       "endDate": "2024-09-30",
       "tasks": [
@@ -75,46 +75,9 @@
       ]
     },
     {
-      "id": "3",
+      "id": "4",
       "name": "Project Gamma",
       "status": "Completed",
-      "startDate": "2023-08-01",
-      "endDate": "2024-01-10",
-      "tasks": [
-        {
-          "id": 301,
-          "description": "Finalize project scope",
-          "status": "Completed",
-          "assignedTo": "Ivan",
-          "dueDate": "2023-08-15"
-        },
-        {
-          "id": 302,
-          "description": "Conduct stakeholder interviews",
-          "status": "Completed",
-          "assignedTo": "Judy",
-          "dueDate": "2023-09-01"
-        },
-        {
-          "id": 303,
-          "description": "Develop prototype",
-          "status": "Completed",
-          "assignedTo": "Kate",
-          "dueDate": "2023-10-10"
-        },
-        {
-          "id": 304,
-          "description": "User testing and feedback",
-          "status": "Completed",
-          "assignedTo": "Leo",
-          "dueDate": "2023-11-01"
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "name": "Project Delta",
-      "status": "In Progress",
       "startDate": "2024-02-01",
       "endDate": "2024-08-31",
       "tasks": [
@@ -224,191 +187,224 @@
     {
       "id": "E1",
       "name": "Alice",
-      "role": "Project Manager",
+      "role": "Operations Manager",
+      "department": "Operations",
       "email": "alice@example.com",
       "phone": "+1234567890",
       "status": "active",
-      "salary": "120000,00"
+      "salary": "120000.00"
     },
     {
       "id": "E2",
       "name": "Bob",
       "role": "Developer",
+      "department": "Tech",
       "email": "bob@example.com",
       "phone": "+0987654321",
       "status": "active",
-      "salary": "125000,00"
+      "salary": "125000.00"
     },
     {
       "id": "E3",
       "name": "Charlie",
-      "role": "Analyst",
+      "role": "Developer",
+      "department": "Tech",
       "email": "charlie@example.com",
       "phone": "+1122334455",
       "status": "inactive",
-      "salary": "151000,00"
+      "salary": "151000.00"
     },
     {
       "id": "E4",
       "name": "Dana",
       "role": "Designer",
+      "department": "Tech",
       "email": "dana@example.com",
       "phone": "+5566778899",
       "status": "inactive",
-      "salary": "136000,00"
+      "salary": "136000.00"
     },
     {
       "id": "E5",
       "name": "Eve",
-      "role": "Tester",
+      "role": "QA",
+      "department": "Tech",
       "email": "eve@example.com",
       "phone": "+1239876540",
       "status": "inactive",
-      "salary": "122000,00"
+      "salary": "122000.00"
     },
     {
       "id": "E6",
       "name": "Frank",
-      "role": "System Architect",
+      "role": "Developer",
+      "department": "Tech",
       "email": "frank@example.com",
       "phone": "+1098765432",
       "status": "active",
-      "salary": "112000,00"
+      "salary": "112000.00",
+      "startDate": "2024-02-01"
     },
     {
       "id": "E7",
       "name": "Grace",
-      "role": "DevOps Engineer",
+      "role": "DevOps",
+      "department": "Operations",
       "email": "grace@example.com",
       "phone": "+2233445566",
       "status": "active",
-      "salary": "100000,00"
+      "salary": "100000.00"
     },
     {
       "id": "E8",
       "name": "Henry",
-      "role": "Database Admin",
+      "role": "Developer",
+      "department": "Tech",
       "email": "henry@example.com",
       "phone": "+6677889900",
       "status": "active",
-      "salary": "112000,00"
+      "salary": "172000.00"
     },
     {
       "id": "E9",
       "name": "Isabel",
-      "role": "UX/UI Designer",
+      "role": "Designer",
+      "department": "Tech",
       "email": "isabel@example.com",
       "phone": "+5544332211",
       "status": "active",
-      "salary": "86000,00"
+      "salary": "86000.00"
     },
     {
       "id": "E11",
       "name": "Kelly",
-      "role": "Marketing Lead",
+      "role": "Project Manager",
+      "department": "Marketing",
       "email": "kelly@example.com",
       "phone": "+9900112233",
       "status": "active",
-      "salary": "138000,00"
+      "salary": "138000.00"
     },
     {
       "id": "E12",
       "name": "Louis",
-      "role": "Backend Developer",
+      "role": "Developer",
+      "department": "Tech",
       "email": "louis@example.com",
       "phone": "+6655443322",
       "status": "inactive",
-      "salary": "122000,00"
+      "salary": "122000.00"
     },
     {
       "id": "E13",
       "name": "Mia",
-      "role": "Frontend Developer",
+      "role": "Developer",
+      "department": "Tech",
       "email": "mia@example.com",
       "phone": "+4433221100",
       "status": "active",
-      "salary": "140000,00"
+      "salary": "140000.00"
     },
     {
       "id": "E14",
       "name": "Nina",
-      "role": "Scrum Master",
+      "role": "Operations Manager",
+      "department": "Operations",
       "email": "nina@example.com",
       "phone": "+3344556677",
       "status": "active",
-      "salary": "96000,00"
+      "salary": "96000.00"
     },
     {
       "id": "E15",
       "name": "Oscar",
-      "role": "QA Engineer",
+      "role": "QA",
+      "department": "Tech",
       "email": "oscar@example.com",
       "phone": "+1122335566",
       "status": "inactive",
-      "salary": "101000,00"
+      "salary": "101000.00"
     },
     {
       "id": "21",
       "name": "Zeljko",
       "role": "Developer",
+      "department": "Tech",
       "email": "zeljko@gmail.com",
       "phone": "+12345678",
       "status": "active",
-      "salary": "124000,00"
+      "salary": "124000.00"
     },
     {
       "id": "be71",
       "name": "Dejan",
-      "role": "Direktor",
+      "role": "Operations Manager",
+      "department": "Operations",
       "email": "dejan@gmail.com",
       "phone": "+381123456",
       "status": "inactive",
-      "salary": "143000,00"
+      "salary": "143000.00"
     },
     {
       "id": "27d0",
       "name": "Igor",
-      "role": "asistent",
+      "role": "Operations Manager",
+      "department": "HR",
       "email": "igor@gmail.com",
       "phone": "+384123458",
       "status": "active",
-      "salary": "122000,00"
+      "salary": "122000.00"
     },
     {
       "id": "6804",
       "name": "Branislav",
       "role": "Developer",
+      "department": "Tech",
       "email": "branislav@gmail.com",
       "phone": "+384567987",
       "status": "active",
-      "salary": "100000,00"
+      "salary": "100000.00"
     },
     {
       "id": "23a9",
       "name": "Bojan",
-      "role": "Menadzer",
+      "role": "QA",
+      "department": "HR",
       "email": "bojan@yahoo.com",
       "phone": "+3811321456",
       "status": "active",
-      "salary": "122000,00"
+      "salary": "122000.00"
     },
     {
       "id": "700f",
       "name": "Ivana",
-      "role": "Knjigovodja",
+      "role": "Project Manager",
+      "department": "Finance",
       "email": "ivana@gmail.com",
-      "phone": "+381 64 123987",
+      "phone": "+38164123987",
       "status": "active",
-      "salary": "102000,00"
+      "salary": "102000.00"
     },
     {
       "id": "d03a",
       "name": "Jovana",
-      "role": "Manager",
+      "role": "Project Manager",
+      "department": "HR",
       "email": "jovana@test.com",
       "phone": "03214687",
       "status": "active",
-      "salary": "102000,00"
+      "salary": "102000.00"
+    },
+    {
+      "id": "86b9",
+      "name": "Brandon",
+      "email": "brandon@gmail.com",
+      "phone": "+3812345698",
+      "salary": "142000",
+      "role": "DevOps",
+      "department": "Tech",
+      "status": "Active",
+      "startDate": "2024-12-04"
     }
   ],
   "activities": [
@@ -595,6 +591,14 @@
       "description": "Iskopni radovi",
       "date": "2024-12-12",
       "durationHours": "96"
+    },
+    {
+      "id": "a951",
+      "projectId": "22",
+      "activityType": "Testing",
+      "description": "Writing QA tests",
+      "date": "2024-11-06",
+      "durationHours": "18"
     }
   ],
   "financials": [

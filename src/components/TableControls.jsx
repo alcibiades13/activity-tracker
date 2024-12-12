@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSliders } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -17,11 +16,12 @@ const TableControls = ({
   selectedTableRows,
   setSelectedTableRows,
   tableName,
+  recordName,
   filters,
   setFilters,
   handleToggleModal,
 }) => {
-  const addNewLink = `/add-${tableName}`;
+  const addNewLink = `/add-${recordName}`;
 
   // const [filters, setFilters] = useState({});
   const schema = getFormFieldsForType(tableName);
@@ -52,11 +52,11 @@ const TableControls = ({
           disabled={selectedTableRows.length === 0}
           className="btn btn-delete-selected"
         >
-          Delete Selected ({selectedTableRows.length})
+          Delete selected ({selectedTableRows.length})
         </button>
 
         <Link to={addNewLink}>
-          <button className="btn btn-add">+ Add New {tableName}</button>
+          <button className="btn btn-add">+ Add new {recordName}</button>
         </Link>
         <button onClick={handleToggleModal} className="btn btn-customize">
           <FontAwesomeIcon icon={faSliders} />
@@ -78,6 +78,7 @@ TableControls.propTypes = {
   setSelectedTableRows: PropTypes.func.isRequired,
   selectedTableRows: PropTypes.array.isRequired,
   tableName: PropTypes.string.isRequired,
+  recordName: PropTypes.string.isRequired,
   handleToggleModal: PropTypes.func.isRequired,
 };
 

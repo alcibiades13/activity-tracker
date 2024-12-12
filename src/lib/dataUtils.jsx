@@ -1,5 +1,5 @@
 import InputField from "../components/InputField"; // adjust path as necessary
-import { ACTIVITY_TYPE_OPTIONS } from "../constants/fitlerConstants";
+import { ACTIVITY_TYPE_OPTIONS, DEPARTMENT_OPTIONS, ROLE_OPTIONS  } from "../constants/fitlerConstants";
 
 
 export const searchInObject = (obj, query) => {
@@ -28,18 +28,26 @@ export const getFormFieldsForType = (type) => {
   const schemas = {
     employees: [
       { name: "name", placeholder: "Employee Name", fieldType: "input", type: "text" },
-      { name: "position", placeholder: "Position", fieldType: "input", type: "text" },
+      { name: "email", placeholder: "Email", fieldType: "input", type: "email" },
+      { name: "phone", placeholder: "Phone Number", fieldType: "input", type: "tel" },
+      { name: "salary", placeholder: "Salary", fieldType: "input", type: "number" },
+      {
+        name: "role",
+        placeholder: "Role",
+        fieldType: "select",
+        options: ROLE_OPTIONS,
+      },
       {
         name: "department",
         placeholder: "Department",
         fieldType: "select",
-        options: [
-          { value: "HR", label: "HR" },
-          { value: "Tech", label: "Tech" },
-          { value: "Finance", label: "Finance" },
-        ],
+        options: DEPARTMENT_OPTIONS,
       },
-      { name: "startDate", placeholder: "Start Date", fieldType: "date" },
+      { name: "status", placeholder: "Status", fieldType: "radio", options: [
+        { value: "active", label: "Active" },
+        { value: "inactive", label: "Inactive" },
+      ]},
+      // { name: "startDate", placeholder: "Start Date", fieldType: "date" },
     ],
     projects: [
       { name: "name", placeholder: "Project Name", fieldType: "input", type: "text" },
@@ -55,17 +63,27 @@ export const getFormFieldsForType = (type) => {
       },
       { name: "startDate", placeholder: "Start Date", fieldType: "date" },
       { name: "endDate", placeholder: "End Date", fieldType: "date" },
+      {
+        name: "tasks",
+        label: "Tasks",
+        nested: true,
+        fields: [
+          { name: "description", label: "Task Description", type: "text" },
+          { name: "assignedTo", label: "Assigned To", type: "text" },
+          { name: "dueDate", label: "Due Date", type: "date" },
+        ],
+      },
     ],
     activities: [
       { name: "projectId", placeholder: "Project ID", fieldType: "input", type: "number" },
       {
         name: "activityType",
-        placeholder: "Activity Type",
+        placeholder: "Activity type",
         fieldType: "select",
         options: ACTIVITY_TYPE_OPTIONS, // Use the imported constant directly
       },
       { name: "description", placeholder: "Description", fieldType: "textarea" },
-      { name: "date", placeholder: "Activity Date", fieldType: "date" },
+      { name: "date", placeholder: "Activity date", fieldType: "date" },
       { name: "durationHours", placeholder: "Duration (hours)", fieldType: "input", type: "number" },
     ],
   };

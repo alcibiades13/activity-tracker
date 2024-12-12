@@ -5,15 +5,15 @@ import { getFormFieldsForType } from "../lib/dataUtils"; // Import your utility 
 import { BASE_URL } from "../constants/config";
 
 
-const EditEmployeePage = () => {
+const EditActivityPage = () => {
   const [fields, setFields] = useState([]);
   const { id } = useParams(); // Get the ID from the URL
-  const type = "employees";
+  const type = "activities";
 
   useEffect(() => {
     try {
-      const employeeFields = getFormFieldsForType("employees");
-      setFields(employeeFields || []);
+      const activityFields = getFormFieldsForType("activities");
+      setFields(activityFields || []);
     } catch (error) {
       console.error("Error fetching form fields:", error);
     }
@@ -35,4 +35,4 @@ const EditEmployeePage = () => {
   );
 };
 
-export default EditEmployeePage;
+export default EditActivityPage;

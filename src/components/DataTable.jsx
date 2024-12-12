@@ -11,7 +11,7 @@ import { getColumnClass } from '../lib/columnUtils';
 
 
 
-const DataTable = ({ tableName }) => {
+const DataTable = ({ tableName, recordName }) => {
   const [tableData, setTableData] = useState([]);
   const [selectedTableRows, setSelectedTableRows] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -80,31 +80,39 @@ const DataTable = ({ tableName }) => {
   // });
 
   const filteredTableRows = tableData.filter((dataRow) => {
-      // Search Filter
-      if (searchQuery && searchField) {
-          const fieldValue = dataRow[searchField];
-          if (!searchInObject(fieldValue, searchQuery)) {
-              return false; // Exclude row if search doesn't match
-          }
+    // Search Filter
+    const matchesSearch =
+      !searchQuery ||
+      (dataRow[searchField]?.toString().toLowerCase() || "").includes(searchQuery.toLowerCase());
+
+    // Dynamic Filters
+    const matchesFilters = Object.entries(filters).every(([filterKey, filterValue]) => {
+      if (!filterValue) return true; // Skip empty filters
+
+      // Handle nested filtering explicitly for tasks
+      if (filterKey === "tasks" && Array.isArray(dataRow.tasks)) {
+        // Check if any task matches the filter
+        return dataRow.tasks.some((task) =>
+          Object.entries(task).some(([key, value]) =>
+            key === "status" // Match nested task status
+              ? value?.toString().toLowerCase().includes(filterValue.toLowerCase())
+              : false
+          )
+        );
       }
 
-      // Dynamic Filters
-      return Object.entries(filters).every(([filterKey, filterValue]) => {
-          if (!filterValue) return true; // Skip if no filter applied
+      // Top-level filtering
+      return (
+        dataRow[filterKey]?.toString().toLowerCase() === filterValue.toLowerCase() ||
+        (Array.isArray(dataRow[filterKey]) &&
+          dataRow[filterKey].some((item) =>
+            item?.toString().toLowerCase().includes(filterValue.toLowerCase())
+          ))
+      );
+    });
 
-          // Handle Date Filter
-          if (filterKey === "date") {
-              const rowDate = new Date(dataRow[filterKey]);
-              const filterDate = new Date(filterValue);
-              return rowDate >= filterDate; // Only include rows on or after the filter date
-          }
-
-          // Default: Strict Equality for Other Filters
-          return dataRow[filterKey] === filterValue;
-      });
+    return matchesSearch && matchesFilters;
   });
-
-
 
 
   console.log('filteredTableRows ' + filteredTableRows);
@@ -188,6 +196,7 @@ const DataTable = ({ tableName }) => {
         selectedTableRows={selectedTableRows}
         setSelectedTableRows={setSelectedTableRows}
         tableName={tableName}
+        recordName={recordName}
         handleToggleModal={handleToggleModal}
         tableType={tableName}
         filters={filters}
@@ -223,6 +232,7 @@ const DataTable = ({ tableName }) => {
             <DataRow
               key={tableRow.id}
               tableRow={tableRow}
+              recordName={recordName}
               tableName={tableName}
               isChecked={selectedTableRows.includes(tableRow.id)}
               onCheckboxChange={() => handleCheckboxChange(tableRow.id)}
@@ -241,6 +251,7 @@ const DataTable = ({ tableName }) => {
 // Define prop types for DataTable
 DataTable.propTypes = {
   tableName: PropTypes.string.isRequired, // Expecting a string table name
+  recordName: PropTypes.string.isRequired, // Expecting a string record name
   columns: PropTypes.arrayOf(PropTypes.string).isRequired, // Array of column names
   data: PropTypes.arrayOf(
     PropTypes.objectOf(PropTypes.any)

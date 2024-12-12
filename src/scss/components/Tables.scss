@@ -86,6 +86,18 @@
     &.inactive-icon {
       color: $grey-400;
     }
+  
+    &.pending-icon {
+      color: #ffc107; // Yellow
+    }
+
+    &.completed-icon {
+      color: #17a2b8; // Blue
+    }
+    
+    &.unknown-icon {
+      color: #6c757d; // Grey
+    } 
   }
 
   .td-center {
